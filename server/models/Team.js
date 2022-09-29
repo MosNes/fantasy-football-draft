@@ -12,7 +12,13 @@ const teamSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'League',
         required: true
-    }
+    },
+    players: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Player'
+        }
+    ],
 })
 
 const Team = mongoose.model('Team', teamSchema);

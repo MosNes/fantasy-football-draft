@@ -7,6 +7,16 @@ const leagueSchema = new Schema({
         type: String,
         required: true,
         trim: true
+    },
+    users: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'User'
+        }
+    ],
+    active_user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
     }
 })
 

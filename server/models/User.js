@@ -15,6 +15,12 @@ const userSchema = new Schema({
     required: true,
     trim: true
   },
+  username: {
+    type: String,
+    required: true,
+    unqiue: true,
+    trim: true
+  },
   email: {
     type: String,
     required: true,
@@ -25,7 +31,12 @@ const userSchema = new Schema({
     required: true,
     minlength: 5
   },
-  orders: [Order.schema]
+  teams: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Team'
+    }
+  ]
 });
 
 // set up pre-save middleware to create password
