@@ -19,7 +19,12 @@ const teamSchema = new Schema({
             ref: 'Player'
         }
     ],
-})
+});
+
+//calculate current # of players
+teamSchema.virtual('playerCount').get(function() {
+    return this.players.length;
+});
 
 const Team = mongoose.model('Team', teamSchema);
 
