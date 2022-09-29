@@ -36,6 +36,9 @@ type Auth {
 type Query {
     
 }
+type Mutation {
+    login(email: String!, password: String!): Auth
+}
 `;
 
 //export typeDefs
