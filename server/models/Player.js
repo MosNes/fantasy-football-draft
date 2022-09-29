@@ -13,14 +13,15 @@ const playerSchema = new Schema({
     required: true,
     trim: true
   },
-  team_id: {
+   player_id: {
     type: Schema.Types.ObjectId,
     ref: 'Team',
     required: true
   },
   position: {
     type: String,
-    enum: ['C', 'RB', 'FB', 'HB', 'OG', 'OT', 'LG', 'LT', 'RG', 'RT', 'TE', 'QB', 'WR', 'CB', 'DE', 'DT', 'LB', 'ILB', 'MLB', 'NT', 'OLB', 'S', 'FS', 'SS', 'K', 'KR', 'LS', 'P', 'PR'] 
+    enum: ['C', 'RB', 'FB', 'HB', 'OG', 'OT', 'LG', 'LT', 'RG', 'RT', 'TE', 'QB', 'WR', 'CB', 'DE', 'DT', 'LB', 'ILB', 'MLB', 'NT', 'OLB', 'S', 'FS', 'SS', 'K', 'KR', 'LS', 'P', 'PR'],
+    required: true
   }
 });
 
