@@ -1,0 +1,33 @@
+{
+  "name": "fantasy-football-draft-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "watch": "nodemon",
+    "seed": "node seeders/seeds.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MosNes/fantasy-football-draft.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MosNes/fantasy-football-draft/issues"
+  },
+  "homepage": "https://github.com/MosNes/fantasy-football-draft#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "apollo-server-express": "^3.10.2",
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "graphql": "^16.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.6.2"
+  }
+}
