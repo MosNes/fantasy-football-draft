@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+import { v4 as uuidv4 } from 'uuid';
 
 const { Schema } = mongoose;
 
@@ -23,7 +24,12 @@ const leagueSchema = new Schema({
             type: Schema.Types.ObjectId,
             ref: 'DraftPlayer'
         }
-    ]
+    ],
+    join_code: {
+        type: String,
+        //generates random code using uuidv4
+        default: uuidv4
+    }
 });
 
 const League = mongoose.model('League', leagueSchema);
