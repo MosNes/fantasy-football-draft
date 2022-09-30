@@ -21,7 +21,7 @@ const leagueSchema = new Schema({
     player_pool: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'Player'
+            ref: 'DraftPlayer'
         }
     ]
 });
