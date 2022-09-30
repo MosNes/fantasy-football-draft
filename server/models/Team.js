@@ -19,6 +19,12 @@ const teamSchema = new Schema({
             ref: 'DraftPlayer'
         }
     ],
+},
+//needed for virtuals
+{
+    toJSON: {
+        virtuals: true
+    }
 });
 
 //calculate current # of players
