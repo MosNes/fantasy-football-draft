@@ -2,7 +2,7 @@ const db = require('../config/connection');
 const { Player } = require('../models');
 
 //import json file and parse it into an array of objects
-const playerlist = JSON.parse(require('./playerSeeds.json'));
+const playerList = require('./playerSeeds.json');
 
 //opens db connection
 db.once('open', async () => {
@@ -11,11 +11,11 @@ db.once('open', async () => {
 
     //create new player records
     try {
-        await Player.insertMany(playerlist);
+        await Player.collection.insertMany(playerList);
         console.log('Players Loaded!');
         //close db connection
         process.exit(0);
-        
+
     //catch error
     } catch(e) {
         console.log("Something went horribly wrong.");
