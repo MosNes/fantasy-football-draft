@@ -8,6 +8,10 @@ const playerSchema = new Schema({
     required: true,
     trim: true
   },
+  team: {
+    type: String,
+    trim: true
+  },
   position: {
     type: String,
     enum: ['C', 'RB', 'FB', 'HB', 'OG', 'OT', 'LG', 'LT', 'RG', 'RT', 'TE', 'QB', 'WR', 'CB', 'DE', 'DT', 'LB', 'ILB', 'MLB', 'NT', 'OLB', 'S', 'FS', 'SS', 'K', 'KR', 'LS', 'P', 'PR'],
@@ -16,11 +20,10 @@ const playerSchema = new Schema({
   projected_points: {
     type: Number,
   },
-  player_number: {
+  number: {
     type: Number,
     required: true
   },
-  
 
 });
 
