@@ -9,25 +9,38 @@ type User {
     _id: ID
     firstName: String
     lastName: String
+    username: String
     email: String
     password: String
-    order: [Order]
+    teams: [Team]
 }
 type Player {
     _id: ID
-    playerName: String 
-    team_Id: [Team]
+    name: String
+    team: String
     position: String
+    projected_points: Float
+    number: Int
 }
 type Team {
     _id: ID
     teamName: String
-    league_Id: [League]
+    league_id: League
+    players: [DraftPlayer]
+    playerCount: Int
 }
 type League {
     _id: ID
-    leagueName: String
-    activeUser:[User]
+    name: String
+    users: [User]
+    active_user: User
+    player_pool: [DraftPlayer]
+    join_code: String
+}
+type DraftPlayer {
+    _id: ID
+    player: Player
+    drafted: Boolean
 }
 type Auth {
     token: ID!
