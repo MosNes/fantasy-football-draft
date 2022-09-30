@@ -19,7 +19,8 @@ const playerSchema = new Schema({
   player_number: {
     type: Number,
     required: true
-  }
+  },
+  
 
 });
 

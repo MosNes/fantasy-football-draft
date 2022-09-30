@@ -17,8 +17,14 @@ const leagueSchema = new Schema({
     active_user: {
         type: Schema.Types.ObjectId,
         ref: 'User'
-    }
-})
+    },
+    player_pool: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Player'
+        }
+    ]
+});
 
 const League = mongoose.model('League', leagueSchema);
 
