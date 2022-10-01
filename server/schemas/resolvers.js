@@ -187,6 +187,30 @@ const resolvers = {
             }
 
             throw new AuthenticationError('You need to be logged in!');
+        },
+
+        //adds player to team and marks player as drafted
+        addPlayerToTeam: async (parent, { playerId, teamId }, context) => {
+            if (context.user) {
+
+                //marks the player as drafted: true
+                await Player.findByIdAndUpdate(
+                    playerId,
+                    { drafted: true },
+                    { new: true}
+                );
+                
+                //adds that player to the team's players array
+                const team = await Team.findByIdAndUpdate(
+                    teamId,
+                    { $addToSet: { players: playerId } },
+                    { new: true }
+                );
+
+                return team.populate('players');
+            }
+
+            throw new AuthenticationError('You need to be logged in!');
         }
     }
 };
