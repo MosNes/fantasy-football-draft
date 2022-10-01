@@ -47,21 +47,22 @@ type Auth {
     user: User
 }
 type Query {
-getUsers: [User]
-getUser(username: String!): User
-getPlayers: [Player]
-getTeam(_id: ID!): Team
-getLeagues: [League]
-getLeague:(_id:ID!): League
+    me: User
+    getUsers: [User]
+    getUser(username: String!): User
+    getPlayers: [Player]
+    getTeam(_id: ID!): Team
+    getLeagues: [League]
+    getLeague:(_id:ID!): League
 }
 
 type Mutation {
-login(email: String!, password: String!): Auth
-addUser(username: String!, email: String!, password: String!): Auth
-addPlayerToTeam(teamId: ID!, playerId: ID!): Team
-createTeam(userId: ID!, leagueId: ID!): Team
-createLeague(leagueName: String!, userId:ID!): League 
-joinLeague(leagueId: ID!): League
+    login(email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!): Auth
+    addPlayerToTeam(teamId: ID!, playerId: ID!): Team
+    createTeam(userId: ID!, leagueId: ID!): Team
+    createLeague(leagueName: String!, userId:ID!): League 
+    joinLeague(leagueId: ID!): League
 }
 
 `;
