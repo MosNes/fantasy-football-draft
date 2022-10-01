@@ -172,6 +172,21 @@ const resolvers = {
             }
 
             throw new AuthenticationError('You need to be logged in!');
+        },
+
+        //adds user to league via join_code
+        joinLeague: async (parent, { join_code }, context) => {
+            if (context.user) {
+                const league = await League.findOneAndUpdate(
+                    {join_code: join_code},
+                    { $addToSet: { users: context.user._id } },
+                    { new: true }
+                ).populate('users');
+
+                return league;
+            }
+
+            throw new AuthenticationError('You need to be logged in!');
         }
     }
 };

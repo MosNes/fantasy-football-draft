@@ -59,7 +59,7 @@ type Mutation {
     addPlayerToTeam(teamId: ID!, playerId: ID!): Team
     createTeam(name: String!, league_id: ID!): Team
     createLeague(name: String!): League 
-    joinLeague(leagueId: ID!): League
+    joinLeague(join_code: String!): League
 }
 `;
 
