@@ -24,7 +24,14 @@ const playerSchema = new Schema({
     type: Number,
     required: true
   },
-
+  drafted: {
+    type: Boolean,
+    default: false
+  },
+  league_id: {
+    type: String,
+    default: null
+  }
 });
 
 const Player = mongoose.model('Player', playerSchema);

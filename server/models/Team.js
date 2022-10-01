@@ -16,7 +16,7 @@ const teamSchema = new Schema({
     players: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'DraftPlayer'
+            ref: 'Player'
         }
     ],
     //username of team owner

@@ -50,7 +50,7 @@ type Auth {
 type Query {
     me: User
     getUsers: [User]
-    getUser(username: String!): User
+    getUser(email: String!): User
     getPlayers: [Player]
     getTeam(_id: ID!): Team
     getLeagues: [League]

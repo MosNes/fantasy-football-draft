@@ -131,7 +131,13 @@ const resolvers = {
             throw new AuthenticationError('You need to be logged in!');
         },
 
-        
+        //creates new league
+        createLeague: async (parent, args, context) => {
+            if (context.user) {
+                //create new league record
+                
+            }
+        }
     }
 };
 

@@ -22,7 +22,7 @@ const leagueSchema = new Schema({
     player_pool: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'DraftPlayer'
+            ref: 'Player'
         }
     ],
     join_code: {
