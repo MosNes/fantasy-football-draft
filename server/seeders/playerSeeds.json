@@ -141,7 +141,7 @@
  },
  {
   "name": "Davante Adams",
-  "position": "WR ",
+  "position": "WR",
   "number": 17,
   "team": "Raiders",
   "projected_points": 200.11
@@ -253,7 +253,7 @@
  },
  {
   "name": "Courtland Sutton",
-  "position": "WR ",
+  "position": "WR",
   "number": 14,
   "team": "Broncos",
   "projected_points": 164.57
@@ -297,7 +297,7 @@
   "name": "Mike Evans",
   "position": "WR",
   "number": 13,
-  "team": "Buccanears",
+  "team": "Buccaneers",
   "projected_points": 190.2
  },
  {
@@ -353,7 +353,7 @@
   "name": "Leonard Fournette",
   "position": "RB",
   "number": 7,
-  "team": "Buccanears",
+  "team": "Buccaneers",
   "projected_points": 203.43
  },
  {
@@ -411,5 +411,12 @@
   "number": 10,
   "team": "Cardinals",
   "projected_points": 124.45
+ },
+ {
+    "name": "Jimmy Schwankyboi",
+  "position": "QB",
+  "number": 999,
+  "team": "Buccaneers",
+  "projected_points": 123.45
  }
 ]

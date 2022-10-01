@@ -3,6 +3,9 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const playerSchema = new Schema({
+  _id: {
+    type: Schema.Types.ObjectId,
+  },
   name: {
     type: String,
     required: true,
@@ -15,7 +18,8 @@ const playerSchema = new Schema({
   position: {
     type: String,
     enum: ['C', 'RB', 'FB', 'HB', 'OG', 'OT', 'LG', 'LT', 'RG', 'RT', 'TE', 'QB', 'WR', 'CB', 'DE', 'DT', 'LB', 'ILB', 'MLB', 'NT', 'OLB', 'S', 'FS', 'SS', 'K', 'KR', 'LS', 'P', 'PR'],
-    required: true
+    required: true,
+    trim: true
   },
   projected_points: {
     type: Number,

@@ -2,7 +2,7 @@
 const { AuthenticationError } = require('apollo-server-express');
 
 //import models here
-const { User, Player, DraftPlayer, Team, League } = require('../models');
+const { User, Player, Team, League } = require('../models');
 
 //import signToken functionality here
 const { signToken } = require('../utils/auth');
@@ -44,7 +44,7 @@ const resolvers = {
         //get all Players
         getPlayers: async () => {
             return (
-                Player.find()
+                Player.find({ league_id: null })
             )
         },
 
@@ -70,7 +70,7 @@ const resolvers = {
                 League.findOne({_id})
                 .populate('player_pool')
                 .populate('users')
-                .populate('user')
+                .populate('active_user')
             )
         }
     },
@@ -135,8 +135,41 @@ const resolvers = {
         createLeague: async (parent, args, context) => {
             if (context.user) {
                 //create new league record
+                const league = await League.create({
+                    ...args,
+                    users: [context.user._id]
+                });
+
+                console.log("New League Id: ", league._id.toString());
+
+                //get all players where league_id === null
+                const players = await Player.find({ league_id: null })
                 
+                //return without version or id
+                .select('-__v -_id');
+
+                //for each player set league_id = newly created league
+                for (const player of players) {
+                    player.league_id = league._id.toString();
+                }
+
+                //bulk create new new player records from new Array
+                await Player.insertMany(players);
+
+                //query newly created players
+                const newPlayers = await Player.find({ league_id: league._id });
+
+                //generate array of _id's from newly created player records
+                const playerIds = await newPlayers.map( player => player._id );
+
+                //push each new player to the league player_pool
+                await League.findByIdAndUpdate(
+                    {_id: league._id},
+                    { $push: { player_pool: { $each: playerIds } } }
+                )
             }
+
+            throw new AuthenticationError('You need to be logged in!');
         }
     }
 };
