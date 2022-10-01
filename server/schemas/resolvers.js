@@ -211,7 +211,16 @@ const resolvers = {
             }
 
             throw new AuthenticationError('You need to be logged in!');
-        }
+        },
+
+        //starts a draft
+        //shuffles the array of users to randomize them before a draft round
+        //selects the user at index 0 as the active user
+
+
+        //sets the active user during a draft round
+        //moves the user at index 0 to the end of the array
+        //selects the new user at index 0 as the active user
     }
 };
 
