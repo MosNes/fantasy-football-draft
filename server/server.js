@@ -1,5 +1,8 @@
 const path = require('path');
 
+//capture environment variables
+require('dotenv').config();
+
 const express = require('express');
 //import apollo server
 const { ApolloServer }  = require('apollo-server-express');
