@@ -140,8 +140,6 @@ const resolvers = {
                     users: [context.user._id]
                 });
 
-                console.log("New League Id: ", league._id.toString());
-
                 //get all players where league_id === null
                 const players = await Player.find({ league_id: null })
                 
@@ -163,10 +161,14 @@ const resolvers = {
                 const playerIds = await newPlayers.map( player => player._id );
 
                 //push each new player to the league player_pool
-                await League.findByIdAndUpdate(
+                return await League.findByIdAndUpdate(
                     {_id: league._id},
-                    { $push: { player_pool: { $each: playerIds } } }
+                    { $push: { player_pool: { $each: playerIds } } },
+                    { new: true }
                 )
+                .populate('users')
+                .populate('player_pool');
+                
             }
 
             throw new AuthenticationError('You need to be logged in!');

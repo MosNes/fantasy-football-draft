@@ -26,7 +26,7 @@ type Player {
 }
 type Team {
     _id: ID
-    teamName: String
+    name: String
     owner: String
     league_id: League
     players: [Player]
