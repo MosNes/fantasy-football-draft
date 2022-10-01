@@ -54,9 +54,8 @@ type Query {
     getPlayers: [Player]
     getTeam(_id: ID!): Team
     getLeagues: [League]
-    getLeague:(_id:ID!): League
+    getLeague(_id:ID!): League
 }
-
 type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, firstName: String!, lastName: String!, password: String!): Auth
@@ -65,7 +64,6 @@ type Mutation {
     createLeague(leagueName: String!, userId:ID!): League 
     joinLeague(leagueId: ID!): League
 }
-
 `;
 
 //export typeDefs
