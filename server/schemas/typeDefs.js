@@ -25,6 +25,7 @@ type Player {
 type Team {
     _id: ID
     teamName: String
+    owner: String
     league_id: League
     players: [DraftPlayer]
     playerCount: Int
@@ -58,9 +59,9 @@ type Query {
 
 type Mutation {
     login(email: String!, password: String!): Auth
-    addUser(username: String!, email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, firstName: String!, lastName: String!, password: String!): Auth
     addPlayerToTeam(teamId: ID!, playerId: ID!): Team
-    createTeam(userId: ID!, leagueId: ID!): Team
+    createTeam(name: String!, league_id: ID!): Team
     createLeague(leagueName: String!, userId:ID!): League 
     joinLeague(leagueId: ID!): League
 }

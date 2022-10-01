@@ -19,6 +19,12 @@ const teamSchema = new Schema({
             ref: 'DraftPlayer'
         }
     ],
+    //username of team owner
+    owner: {
+        type: String,
+        required: true,
+        trim: true
+    }
 },
 //needed for virtuals
 {
