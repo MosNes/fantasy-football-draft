@@ -143,6 +143,13 @@ const resolvers = {
                     users: [context.user._id]
                 });
 
+                //updates User record with league ID
+                await User.findByIdAndUpdate(
+                    user.context._id,
+                    { league_id: league._id },
+                    {new: true}
+                );
+
                 //get all players where league_id === null
                 const players = await Player.find({ league_id: null })
                 
@@ -185,6 +192,13 @@ const resolvers = {
                     { $addToSet: { users: context.user._id } },
                     { new: true }
                 ).populate('users');
+
+                //updates User record with league ID
+                await User.findByIdAndUpdate(
+                    user.context._id,
+                    { league_id: league._id },
+                    {new: true}
+                );
 
                 return league;
             }
