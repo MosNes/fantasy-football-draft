@@ -77,5 +77,19 @@ export const GET_PLAYERS = gql`
 
 //get team by ID
 export const GET_TEAM = gql`
-
+    query getTeam($_id: ID!) {
+        getTeam( _id: $_id ) {
+            name
+            league_id
+            owner
+            playerCount
+            players {
+                _id
+                name
+                number
+                position
+                projected_points
+            }
+        }
+    }
 `;
