@@ -1,6 +1,6 @@
 //Footer component
 import React from 'react';
-import * as FaIcons from 'react-icons/fa';
+import { FaTwitter, FaGithub, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -14,15 +14,15 @@ const Footer = () => {
         <h2> Follow Us </h2>
         <a href="www.twitter/yaysportsdraft"
           className="twitter">
-          <FaIcons.FaTwitter size="30px" />
+          <FaTwitter size="30px" />
         </a>
         <a href="https://github.com/MosNes/fantasy-football-draft.git"
           className="github">
-          <FaIcons.FaGithub size="30px" />
+          <FaGithub size="30px" />
         </a>
         <a href="https://www.instagram.com/yaysportsdraft/"
           className="instagram">
-          <FaIcons.FaInstagram size="30px" />
+          <FaInstagram size="30px" />
         </a>
       </div>
 
