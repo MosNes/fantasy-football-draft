@@ -226,9 +226,9 @@ const resolvers = {
                     teamId,
                     { $addToSet: { players: playerId } },
                     { new: true }
-                );
+                ).populate('players');
 
-                return team.populate('players');
+                return team;
             }
 
             throw new AuthenticationError('You need to be logged in!');

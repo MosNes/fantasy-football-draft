@@ -92,3 +92,70 @@ mutation joinLeague($join_code: String!) {
   }
 `;
 
+export const ADD_PLAYER = gql`
+mutation addPlayerToTeam($teamId: ID!, $playerId: ID!) {
+    addPlayerToTeam(teamId: $teamId, playerId: $playerId) {
+      name
+      players {
+        _id
+        name
+        number
+        position
+        projected_points
+        drafted
+      }
+    }
+  }
+`;
+
+export const START_DRAFT = gql`
+mutation startDraft($league_id: ID!) {
+    startDraft(league_id: $league_id) {
+      active_user {
+        _id
+        username
+      }
+      users {
+        username,
+        _id,
+        email
+      }
+    }
+  }
+`;
+
+export const SET_ACTIVE_USER = gql`
+mutation setActiveUser($league_id: ID!) {
+    setActiveUser(league_id: $league_id) {
+      active_user {
+        _id
+        username
+      }
+      users {
+        username,
+        _id,
+        email
+      }
+    }
+  }
+`;
+
+export const END_DRAFT = gql`
+mutation endDraft($leagueId: ID!) {
+    endDraft(league_id: $leagueId) {
+      active_user {
+        _id
+        username
+      }
+    }
+  }
+`;
+
+export const DELETE_LEAGUE = gql`
+mutation deleteLeague($leagueId: ID!) {
+    deleteLeague(league_id: $leagueId) {
+      _id
+      name
+    }
+  }  
+`;
