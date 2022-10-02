@@ -1,6 +1,5 @@
 //Header component
 import React from 'react';
-//************import bootstrap and react-bootstrap*****
 import { Link } from 'react-router-dom';
 import Auth from '../../utils/auth';
 
