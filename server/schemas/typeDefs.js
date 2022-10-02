@@ -62,6 +62,7 @@ type Mutation {
     joinLeague(join_code: String!): League
     startDraft(league_id: ID!): League
     setActiveUser(league_id: ID!): League
+    endDraft(league_id: ID!): League
 }
 `;
 

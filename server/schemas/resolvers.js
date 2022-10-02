@@ -237,7 +237,7 @@ const resolvers = {
                         users: userIds
                     },
                     { new: true }
-                    ).populate('users').populate('active_user');
+                    ).populate('users').populate('active_user').populate('player_pool');
 
                 return updatedLeague;
             }
@@ -272,14 +272,30 @@ const resolvers = {
                         users: userIds
                     },
                     { new: true}
-                ).populate('users').populate('active_user');
+                ).populate('users').populate('active_user').populate('player_pool');
 
                 return updatedLeague;
             }
 
             throw new AuthenticationError('You need to be logged in!');
-        }
+        },
         
+        //ends the current draft
+        endDraft: async (parent, { league_id }, context) => {
+            if(context.user) {
+
+                //sets the active user to null
+                const league = await League.findByIdAndUpdate(
+                    league_id,
+                    { active_user: null },
+                    { new: true}
+                ).populate('users').populate('active_user').populate('player_pool');
+
+                return league;
+
+            }
+            throw new AuthenticationError('You need to be logged in!');
+        }
         
     }
 };
