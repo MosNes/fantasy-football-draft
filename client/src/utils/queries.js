@@ -93,3 +93,53 @@ export const GET_TEAM = gql`
         }
     }
 `;
+
+//gets all leagues
+export const GET_LEAGUES = gql`
+    query getLeagues {
+        getLeagues {
+            _id
+            name
+        }
+    }
+`;
+
+//gets league by ID
+export const GET_LEAGUE = gql`
+query getLeague($id: ID!) {
+    getLeague(_id: $id) {
+      _id
+      name
+      join_code
+      users {
+        _id
+        username
+        email
+        firstName
+        lastName
+        teams {
+          name
+          _id
+          owner
+          players {
+            _id
+            name
+            position
+            number
+            projected_points
+          }
+        }
+      }
+      player_pool {
+        _id
+        name
+        team
+        position
+        number
+        projected_points
+        drafted
+        league_id
+      }
+    }
+  }
+`;

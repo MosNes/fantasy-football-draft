@@ -68,13 +68,17 @@ const resolvers = {
         },
 
         //get League by ID
-        getLeague: async (parent, { _id }) => {
-            return (
-                League.findOne({_id})
-                .populate('player_pool')
-                .populate('users')
-                .populate('active_user')
-            )
+        getLeague: async (parent, { _id }, context) => {
+            if (context.user) {
+
+                return (
+                    League.findOne({_id})
+                    .populate('player_pool')
+                    .populate('users')
+                    .populate('active_user')
+                )
+            }
+            throw new AuthenticationError('Not Logged In');
         }
     },
 
