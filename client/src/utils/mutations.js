@@ -53,3 +53,42 @@ mutation createTeam($name: String!, $leagueId: ID!) {
   }
 `;
 
+export const CREATE_LEAGUE = gql`
+mutation createLeague($name: String!) {
+    createLeague(name: $name) {
+      _id
+      name
+      users {
+        _id
+        username
+        email
+        firstName
+        lastName
+      }
+      player_pool {
+        _id
+        name
+        number
+        position
+        team
+        projected_points
+        drafted
+      }
+    }
+  }
+`;
+
+export const JOIN_LEAGUE = gql`
+mutation joinLeague($join_code: String!) {
+    joinLeague(join_code: $join_code) {
+      _id
+      name
+      users {
+        _id
+        username
+        email
+      }
+    }
+  }
+`;
+

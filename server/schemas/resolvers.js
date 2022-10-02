@@ -195,7 +195,7 @@ const resolvers = {
                     {join_code: join_code},
                     { $addToSet: { users: context.user._id } },
                     { new: true }
-                ).populate('users');
+                ).populate('users').populate('player_pool');
 
                 //updates User record with league ID
                 await User.findByIdAndUpdate(
