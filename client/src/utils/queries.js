@@ -1,6 +1,8 @@
 import { gql } from '@apollo/client';
 
 // ADD ALL CLIENT-SIDE GRAPHQL QUERIES HERE
+
+//get all users
 export const GET_USERS = gql`
     query getUsers {
         getUsers {
@@ -12,6 +14,7 @@ export const GET_USERS = gql`
     }
 `;
 
+//get user by email
 export const GET_USER = gql`
     query getUser($email: String!) {
         getUser(email: $email) {
@@ -22,6 +25,7 @@ export const GET_USER = gql`
         email
         league_id
         teams {
+            _id
             name
             league_id {
             _id
@@ -31,6 +35,7 @@ export const GET_USER = gql`
     }
 `;
 
+//authenticate a user
 export const ME = gql`
     query me {
         me {
@@ -54,4 +59,23 @@ export const ME = gql`
             }
         }
     }
+`;
+
+//get all players
+export const GET_PLAYERS = gql`
+    query getPlayers {
+        getPlayers {
+            _id
+            name
+            team
+            position
+            projected_points
+            number
+        }
+    }
+`;
+
+//get team by ID
+export const GET_TEAM = gql`
+
 `;
