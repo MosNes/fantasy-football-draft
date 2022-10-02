@@ -295,6 +295,28 @@ const resolvers = {
 
             }
             throw new AuthenticationError('You need to be logged in!');
+        },
+
+        //deletes a league, its teams, and its copy of players
+        deleteLeague: async (parent, { league_id }, context) => {
+            if (context.user) {
+                //deletes all teams with league_id = league_id
+                const deletedTeams = await Team.deleteMany({ league_id: league_id });
+                console.log("Deleted Teams: ", deletedTeams);
+
+                //deletes all players with league_id = league_id
+                const deletedPlayers = await Player.deleteMany({ league_id: league_id });
+                console.log("Deleted Players: ", deletedPlayers);
+
+                //deletes the league
+                const deletedLeague = await League.findByIdAndDelete(league_id);
+                console.log("Deleted League: ", deletedLeague);
+                
+
+                return deletedLeague;
+
+            }
+            throw new AuthenticationError('You need to be logged in!');
         }
         
     }
