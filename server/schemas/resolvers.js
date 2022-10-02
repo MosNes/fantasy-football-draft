@@ -87,7 +87,7 @@ const resolvers = {
 
         //logs in a user
         login: async (parent, { email, password }) => {
-            const user = await User.findOne({ email });
+            const user = await User.findOne({ email }).populate('teams');
 
             //if user is not found
             if (!user) {
