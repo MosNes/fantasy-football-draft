@@ -60,8 +60,8 @@ type Mutation {
     createTeam(name: String!, league_id: ID!): Team
     createLeague(name: String!): League 
     joinLeague(join_code: String!): League
-    startDraft(): League
-    setActiveUser(): League
+    startDraft(league_id: ID!): League
+    setActiveUser(league_id: ID!): League
 }
 `;
 

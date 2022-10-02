@@ -7,6 +7,9 @@ const { User, Player, Team, League } = require('../models');
 //import signToken functionality here
 const { signToken } = require('../utils/auth');
 
+//import array shuffle function
+const shuffleArray = require('../utils/shuffle');
+
 const resolvers = {
     //add methods to handle queries here
     Query: {
@@ -214,13 +217,70 @@ const resolvers = {
         },
 
         //starts a draft
-        //shuffles the array of users to randomize them before a draft round
-        //selects the user at index 0 as the active user
+        startDraft: async (parent, { league_id }, context) => {
+            if (context.user) {
 
+                const league = await League.findById( league_id ).populate('users');
 
-        //sets the active user during a draft round
-        //moves the user at index 0 to the end of the array
-        //selects the new user at index 0 as the active user
+                //gets array of user IDs from the league's users
+                const userIds = await league.users.map( user => user._id );
+                
+                //shuffles the array of users to randomize them before a draft round
+                shuffleArray(userIds);
+
+                //selects the user at index 0 as the active user
+                //overwrites current array of users with shuffled array
+                const updatedLeague = await League.findByIdAndUpdate(
+                    league_id,
+                    {
+                        active_user: userIds[0],
+                        users: userIds
+                    },
+                    { new: true }
+                    ).populate('users').populate('active_user');
+
+                return updatedLeague;
+            }
+
+            throw new AuthenticationError('You need to be logged in!');
+        },
+        
+        //sets the next active user during a draft round
+        setActiveUser: async (parent, { league_id }, context) => {
+            if (context.user) {
+                const league = await League.findById(league_id)        
+                    .populate('users');
+                
+                //gets array of user IDs
+                const userIds = await league.users.map( user => user._id );
+
+                console.log('before push shift array: ', userIds);
+
+                //moves the user at index 0 to the end of the array
+                userIds.push(userIds.shift());
+
+                console.log('after push shift arrays: ', userIds);
+
+                //selects the new user at index 0 as the active user
+                const activeUser = userIds[0];
+
+                //updates League with new array and active user
+                const updatedLeague = await League.findByIdAndUpdate(
+                    league_id,
+                    {
+                        active_user: activeUser,
+                        users: userIds
+                    },
+                    { new: true}
+                ).populate('users').populate('active_user');
+
+                return updatedLeague;
+            }
+
+            throw new AuthenticationError('You need to be logged in!');
+        }
+        
+        
     }
 };
 
