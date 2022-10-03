@@ -1,4 +1,4 @@
-.Pagelayout {
+/* .Pagelayout {
   height: 100vh;
   width: 100%;
   position: fixed;
@@ -156,7 +156,7 @@
     display: block;
     z-index: 9;
     cursor: pointer;
-    background-image: url('https://sleepercdn.com/landing/web2021/icon/carat_left.png');
+
     background-repeat: no-repeat;
     background-size: 24px;
     background-position: center;
@@ -169,7 +169,7 @@
     background-color: #475463;
   }
   .fluid-container .controls .next {
-    background-image: url('https://sleepercdn.com/landing/web2021/icon/carat_right.png');
+
     left: auto;
     right: 32px;
   }
@@ -433,54 +433,9 @@
     }
   }
   .page-header.header-football {
-    background-image: url('https://sleepercdn.com/landing/web2021/background/bg_head.png');
+
   }
-  .page-header.header-football .header-anchors a.active,
-  .page-header.header-football .header-anchors a:hover {
-    color: #00CEB8;
-  }
-  .page-header.header-basketball {
-    background-image: url('https://sleepercdn.com/landing/web2021/background/bg_bball.png');
-  }
-  .page-header.header-basketball .header-anchors a.active,
-  .page-header.header-basketball .header-anchors a:hover {
-    color: #FFAE58;
-  }
-  .page-header.header-bracketmania {
-    background-image: url('https://sleepercdn.com/landing/web2021/background/bg_bball.png');
-  }
-  .page-header.header-bracketmania .header-anchors a.active,
-  .page-header.header-bracketmania .header-anchors a:hover {
-    color: #FF5C00;
-  }
-  .page-header.header-lcs {
-    background-image: url('https://sleepercdn.com/landing/web2021/background/bg_lcs.png');
-  }
-  .page-header.header-lcs .header-anchors a.active,
-  .page-header.header-lcs .header-anchors a:hover {
-    color: #00BAFF;
-  }
-  .page-header.header-mockdraft {
-    background-image: url('https://sleepercdn.com/landing/web2021/background/bg_head.png');
-  }
-  .page-header.header-mockdraft .header-anchors a.active,
-  .page-header.header-mockdraft .header-anchors a:hover {
-    color: #BD66FF;
-  }
-  .page-header.header-squads {
-    background-image: url('https://sleepercdn.com/landing/web2021/background/bg_head.png');
-  }
-  .page-header.header-squads .header-anchors a.active,
-  .page-header.header-squads .header-anchors a:hover {
-    color: #98A2FF;
-  }
-  .page-header.header-about {
-    background-image: url('https://sleepercdn.com/landing/web2021/background/bg_head.png');
-  }
-  .page-header.header-about .header-anchors a.active,
-  .page-header.header-about .header-anchors a:hover {
-    color: #45E8A7;
-  }
+
   .page-header .badge {
     position: absolute;
     right: 32px;
@@ -529,7 +484,7 @@
     content: '';
     height: 12px;
     width: 12px;
-    background-image: url('https://sleepercdn.com/landing/web2021/icon/carat_right_sm.png');
+
     background-size: contain;
     display: block;
     position: absolute;
@@ -560,7 +515,7 @@
     position: absolute;
     right: 0;
     top: 0;
-    background-image: linear-gradient(90deg, rgba(8, 17, 29, 0), #0F1B2B);
+    background-image: linear-gradient(90deg, rgba(188, 16, 16, 0), #0F1B2B);
   }
   .page-header .header-anchors .container {
     padding-top: 20px;
@@ -805,7 +760,7 @@
   body {
     margin: 0;
     background-color: #1e2534;
-    background-image: linear-gradient(to bottom, #17263A, #040C17);
+    background-image: linear-gradient(to bottom, #1d3a17, #29af4a);
     min-height: 100vh;
   }
   body.lock-scroll {
@@ -1054,88 +1009,10 @@
     left: 0;
     background-color: rgba(50, 70, 91, 0.5);
     border-radius: 50%;
-    background-image: url('https://sleepercdn.com/landing/web2021/img/football_sprites.png');
+
     background-repeat: no-repeat;
   }
-  .feature-title.feature-football:before {
-    background-image: url('https://sleepercdn.com/landing/web2021/img/football_sprites.png');
-  }
-  .feature-title.feature-basketball:before {
-    background-image: url('https://sleepercdn.com/landing/web2021/img/bball/basketball_sprites.png');
-  }
-  .feature-title.feature-bracketmania:before {
-    background-image: url('https://sleepercdn.com/landing/web2021/img/bm/bracketmania_sprites.png');
-  }
-  .feature-title.feature-lcs:before {
-    background-image: url('https://sleepercdn.com/landing/web2021/img/lcs/lcs_sprites.png');
-  }
-  .feature-title.feature-squads:before {
-    background-image: url('https://sleepercdn.com/landing/web2021/img/squads/squads_sprites.png');
-  }
-  .feature-title.feature-mockdraft:before {
-    background-image: url('https://sleepercdn.com/landing/web2021/img/mockdraft/mockdraft_sprites.png');
-  }
-  .feature-title.feature-about:before {
-    background-image: url('https://sleepercdn.com/landing/web2021/img/about_sprites.png');
-  }
-  .feature-title.feature-ads:before {
-    background-position: 0px 0px;
-  }
-  .feature-title.feature-scoring:before {
-    background-position: -80px 0px;
-  }
-  .feature-title.feature-research:before {
-    background-position: -160px 0px;
-  }
-  .feature-title.feature-commish:before {
-    background-position: 0px -80px;
-  }
-  .feature-title.feature-team:before {
-    background-position: -80px -80px;
-  }
-  .feature-title.feature-timer:before {
-    background-position: -160px -80px;
-  }
-  .feature-title.feature-finances:before {
-    background-position: 0px -160px;
-  }
-  .feature-title.feature-operations:before {
-    background-position: -80px -160px;
-  }
-  @media (max-width: 767px) {
-    .feature-title {
-      padding-left: 88px;
-    }
-    .feature-title:before {
-      height: 64px;
-      width: 64px;
-      background-size: 192px;
-    }
-    .feature-title.feature-ads:before {
-      background-position: 0px 0px;
-    }
-    .feature-title.feature-scoring:before {
-      background-position: -64px 0px;
-    }
-    .feature-title.feature-research:before {
-      background-position: -128px 0px;
-    }
-    .feature-title.feature-commish:before {
-      background-position: 0px -64px;
-    }
-    .feature-title.feature-team:before {
-      background-position: -64px -64px;
-    }
-    .feature-title.feature-timer:before {
-      background-position: -128px -64px;
-    }
-    .feature-title.feature-finances:before {
-      background-position: 0px -128px;
-    }
-    .feature-title.feature-operations:before {
-      background-position: -64px -128px;
-    }
-  }
+  
   .badges-container {
     margin-top: 48px;
     display: flex;
@@ -1150,7 +1027,7 @@
     height: 96px;
     width: 96px;
     border-radius: 50%;
-    background-image: url('https://sleepercdn.com/landing/web2021/icon/Sprites96x96.png');
+
     background-repeat: no-repeat;
   }
   .badge .badge-img.badge-ff-chat {
@@ -1235,10 +1112,10 @@
     min-height: 70px;
   }
   table.comparison-chart tr.feature:nth-of-type(2n) {
-    background-image: linear-gradient(to right, rgba(163, 187, 211, 0), rgba(163, 187, 211, 0.05) 10%);
+    background-image: linear-gradient(to right, rgba(65, 144, 223, 0), rgba(41, 126, 211, 0.05) 10%);
   }
   table.comparison-chart tr.feature:nth-of-type(2n) td:nth-child(2) {
-    background-color: #192533;
+    background-color: #605d25;
   }
   table.comparison-chart tr.feature td {
     height: 70px;
@@ -1321,29 +1198,7 @@
       right: 2%;
     }
   }
-  .chat.animate {
-    animation: moveUp 15s;
-    animation-delay: 1s;
-    animation-fill-mode: forwards;
-  }
-  .chat.animate .chat-item {
-    opacity: 1;
-  }
-  .chat.animate .chat-item:nth-child(1) {
-    transition-delay: 1.3s;
-  }
-  .chat.animate .chat-item:nth-child(2) {
-    transition-delay: 4.3s;
-  }
-  .chat.animate .chat-item:nth-child(3) {
-    transition-delay: 7.3s;
-  }
-  .chat.animate .chat-item:nth-child(4) {
-    transition-delay: 10.3s;
-  }
-  .chat.animate .chat-item:nth-child(5) {
-    transition-delay: 13.3s;
-  }
+  
   @keyframes moveUp {
     0% {
       transform: translateY(80%);
@@ -1819,7 +1674,7 @@
     display: block;
     top: 0;
     left: 0;
-    background-image: url('https://sleepercdn.com/landing/web2021/icon/play-icon.png');
+
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 30%;
@@ -1858,7 +1713,7 @@
     display: block;
     top: 0;
     left: 0;
-    background-image: url('https://sleepercdn.com/landing/web2021/icon/play-icon.png');
+
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 30%;
@@ -2043,7 +1898,7 @@
     background-color: #fff;
   }
   .banner.lcs-banner:before {
-    background-image: url('https://sleepercdn.com/landing/web2021/background/fantasy-lcs-banner.png');
+
   }
   .banner .banner-content h3 {
     color: #022047;
@@ -2101,7 +1956,7 @@
     display: block;
     z-index: 9;
     cursor: pointer;
-    background-image: url('https://sleepercdn.com/landing/web2021/icon/carat_left.png');
+
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -2110,7 +1965,6 @@
     opacity: 0.7;
   }
   .slideshow .next {
-    background-image: url('https://sleepercdn.com/landing/web2021/icon/carat_right.png');
     left: auto;
     right: 32px;
   }
@@ -2880,29 +2734,29 @@
       margin-top: 80px;
     }
   }
-  .hades .callout .features {
+  .hades .callout .roster {
     display: flex;
   }
-  .hades .callout .features .feature:not(:first-of-type) {
+  .hades .callout .roster .feature:not(:first-of-type) {
     margin-left: 24px;
   }
-  .hades .callout .features .feature:not(:first-of-type) .description {
+  .hades .callout .roster .feature:not(:first-of-type) .description {
     padding-left: 24px;
     border-left: 1px solid #364359;
   }
-  .hades .callout .features .feature:not(:first-of-type) h2 {
+  .hades .callout .roster .feature:not(:first-of-type) h2 {
     padding-left: 24px;
   }
-  .hades .callout .features .description {
+  .hades .callout .roster .description {
     white-space: nowrap;
   }
-  .hades .callout .features h2 {
+  .hades .callout .roster h2 {
     font-family: "Poppins", Helvetica, Arial, sans-serif;
     font-size: 52px;
     font-weight: 600;
     margin: 0;
   }
-  .hades .callout .features h2 span.bottom {
+  .hades .callout .roster h2 span.bottom {
     font-size: 14px;
   }
   .hades .callout .download-ct {
@@ -2927,15 +2781,7 @@
     position: absolute;
     z-index: 9;
   }
-  .tag-fb:before {
-    background-image: url('https://sleepercdn.com/landing/web2021/icon/tag-fb.png');
-  }
-  .tag-bm:before {
-    background-image: url('https://sleepercdn.com/landing/web2021/icon/tag-bm.png');
-  }
-  .tag-lcs:before {
-    background-image: url('https://sleepercdn.com/landing/web2021/icon/tag-lcs.png');
-  }
+
   @media (max-width: 767px) {
     .league-badge {
       margin-top: 32px;
@@ -3241,13 +3087,13 @@
     margin-top: 32px;
   }
   .compare.green {
-    background-image: url('https://sleepercdn.com/images/landing/v3/icons/icon_check_green-f3c176af780673cb57402840a50b3fd2.png?vsn=d');
+   
   }
   .compare.green + .yellow {
     margin-top: 40px;
   }
   .compare.yellow {
-    background-image: url('https://sleepercdn.com/images/landing/v3/icons/icon_check_orange-0c0736f87d719cd55dbbab86e1228673.png?vsn=d');
+  
   }
   @media (max-width: 767px) {
     .fluid-container div.col-3.compare-card {
@@ -3296,7 +3142,7 @@
     display: inline-block;
     height: 18px;
     width: 18px;
-    background-image: url('https://sleepercdn.com/landing/web2021/icon/star.png');
+
     background-position: center left;
     background-repeat: no-repeat;
     background-size: auto;
@@ -3439,7 +3285,7 @@
     top: 0;
     right: 0;
     transform: rotate(180deg);
-    background-image: url('https://sleepercdn.com/landing/web2021/icon/carat_up.png');
+
   }
   .main-nav .primary-nav.has-children .nav-item {
     display: inline-block;
@@ -4040,26 +3886,4 @@
     border: 4px solid #635EE4;
     opacity: 0;
     transition: all 0.4s ease;
-  }
-  @media (max-width: 767px) {
-    .good-picks .pick .pick-correct {
-      border-width: 2px;
-    }
-    .good-picks .pick .pick-correct svg {
-      padding: 0 10px;
-    }
-  }
-  .good-picks .pick:nth-child(2) .pick-correct {
-    transition-delay: 0.3s;
-  }
-  .good-picks .pick:nth-child(3) .pick-correct {
-    transition-delay: 0.6s;
-  }
-  .good-picks .pick:nth-child(4) .pick-correct {
-    transition-delay: 0.9s;
-  }
-  .good-picks .pick img {
-    border-radius: 50%;
-  }
-  
-  /*# sourceMappingURL=beta.web.css.map*/
+  } */
