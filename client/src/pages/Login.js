@@ -1,15 +1,17 @@
 //Login page component
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
+import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 //add import for login mutation
 
     const Login = (props) => {
+        //add state for login form
         const [formState, setFormState] = useState({ email: '', password: '' });
-        // const [login, { error }] = useMutation(LOGIN_USER);
+        const [login, { error }] = useMutation(LOGIN_USER);
       
-        // update state based on form input changes
+        //add change handler for login form
         const handleChange = (event) => {
           const { name, value } = event.target;
       
@@ -19,7 +21,8 @@ import Auth from '../utils/auth';
           });
         };
       
-        // submit form
+       
+    //add submit handler for login form
         const handleFormSubmit = async (event) => {
           event.preventDefault();
       
@@ -40,12 +43,6 @@ import Auth from '../utils/auth';
           });
         };
       
-    //add state for login form
-
-    //add change handler for login form
-
-    //add submit handler for login form
-
     return (
         <main className="flex-row justify-center mb-4">
           <div className="col-12 col-md-6">
