@@ -8,12 +8,11 @@ import Dashboard from '../../pages/Dashboard';
 import Login from '../../pages/Login';
 import Signup from '../../pages/Signup';
 
-export default class Header extends Component {
+const Header = () => {
     // const logout = event => {
     //     event.preventDefault();
     //     Auth.logout();
     // }
-    render() { 
 return (
         <Router>
         <div>
@@ -56,8 +55,8 @@ return (
         </div>
     </Router>
 )
+
 }
-} 
 // const Header = () => {
 
 //     //logout function
