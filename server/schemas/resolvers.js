@@ -67,19 +67,31 @@ const resolvers = {
             )
         },
 
-        //get League by ID
-        getLeague: async (parent, { _id }, context) => {
-            if (context.user) {
-
+        //get League by ID without Auth
+        getLeague: async (parent, { _id }) => {
+           
                 return (
-                    League.findOne({_id})
+                    League.findOne({ _id})
                     .populate('player_pool')
                     .populate('users')
                     .populate('active_user')
                 )
-            }
-            throw new AuthenticationError('Not Logged In');
-        }
+            
+        },
+
+        //With Auth
+        // getLeague: async (parent, { _id }, context) => {
+        //     if (context.user) {
+
+        //         return (
+        //             League.findOne({_id})
+        //             .populate('player_pool')
+        //             .populate('users')
+        //             .populate('active_user')
+        //         )
+        //     }
+        //     throw new AuthenticationError('Not Logged In');
+        // }
     },
 
     //add methods to handle mutations here

@@ -47,7 +47,9 @@ function App() {
       <Router>
         <div className="App">
           <Header />
-          <Dashboard />
+          <Routes>
+          <Route path="dashboard/:leagueId" element={<Dashboard />} />
+          </Routes>
           <Footer />
         </div>
       </Router>
