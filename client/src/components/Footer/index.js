@@ -17,7 +17,7 @@ const Footer = () => {
 
       <div className="footer-container">
         <p> Follow Us </p>
-        <a href="www.twitter/yaysportsdraft"
+        <a href="https://twitter.com/yaysportsdraft/status/1577691029989466112?s=20&t=LuoVfOQIaQ59x4AvHFW1iA"
           className="twitter">
           <FaTwitter size="30px" />
         </a>
