@@ -1,48 +1,43 @@
-const { Schema, model } = require('mongoose');
-const bcrypt = require('bcrypt');
+const mongoose = require('mongoose');
 
-const userSchema = new Schema(
-  {
-    username: {
-      type: String,
-      required: true,
-      unique: true,
-      trim: true
-    },
-    email: {
-      type: String,
-      required: true,
-      unique: true,
-      match: [/.+@.+\..+/, 'Must match an email address!']
-    },
-    password: {
-      type: String,
-      required: true,
-      minlength: 5
-    },
+const { Schema } = mongoose;
+
+const playerSchema = new Schema({
+  _id: {
+    type: Schema.Types.ObjectId,
   },
-  {
-    toJSON: {
-      virtuals: true
-    }
+  name: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  team: {
+    type: String,
+    trim: true
+  },
+  position: {
+    type: String,
+    enum: ['C', 'RB', 'FB', 'HB', 'OG', 'OT', 'LG', 'LT', 'RG', 'RT', 'TE', 'QB', 'WR', 'CB', 'DE', 'DT', 'LB', 'ILB', 'MLB', 'NT', 'OLB', 'S', 'FS', 'SS', 'K', 'KR', 'LS', 'P', 'PR'],
+    required: true,
+    trim: true
+  },
+  projected_points: {
+    type: Number,
+  },
+  number: {
+    type: Number,
+    required: true
+  },
+  drafted: {
+    type: Boolean,
+    default: false
+  },
+  league_id: {
+    type: String,
+    default: null
   }
-);
-
-// set up pre-save middleware to create password
-userSchema.pre('save', async function(next) {
-  if (this.isNew || this.isModified('password')) {
-    const saltRounds = 10;
-    this.password = await bcrypt.hash(this.password, saltRounds);
-  }
-
-  next();
 });
 
-// compare the incoming password with the hashed password
-userSchema.methods.isCorrectPassword = async function(password) {
-  return bcrypt.compare(password, this.password);
-};
+const Player = mongoose.model('Player', playerSchema);
 
-const User = model('User', userSchema);
-
-module.exports = User;
+module.exports = Player;

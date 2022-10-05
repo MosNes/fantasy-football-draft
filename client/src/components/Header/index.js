@@ -1,5 +1,9 @@
 //Header component
 import React from 'react';
+<<<<<<< HEAD
+=======
+import { Link } from 'react-router-dom';
+>>>>>>> develop
 import Auth from '../../utils/auth';
 import { Navbar, NavDropdown, Form, FormControl, Button, Nav } from 'react-bootstrap'
 import{BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
