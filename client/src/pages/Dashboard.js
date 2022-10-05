@@ -1,6 +1,7 @@
 //User dashboard page
 import React, { useEffect } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
+import { Container, Row, Col } from 'react-bootstrap';
 
 import Auth from '../utils/auth';
 
@@ -29,16 +30,10 @@ const Dashboard = () => {
 
 	const userQuery = useQuery(ME);
 
-
-	// useEffect(() => {
-	// 	console.log('... testData', testData);
-	// }, [testLoading, testData]);
-
-	// const league = leagueData?.getLeague || {};
-	// const league = leagueData;
-
 	const leagueData = leagueQuery.data?.getLeague || {};
 	const userData = userQuery.data?.me || {};
+
+	console.log(leagueData);
 
 	if (userQuery.loading || leagueQuery.loading ) {
 		return (
@@ -49,7 +44,17 @@ const Dashboard = () => {
 	return (
 		<main>
 			This is the Dashboard
-			<DataTable leagueData={leagueData}/>
+			<Row>
+				<Container className='p-3'>This is the League Info Component</Container>
+			</Row>
+			<Row>
+				<Container className='col-4 p-3'>This is the Team Info Component</Container>
+				<Container className='col-8 p-3'>
+					<DataTable leagueData={leagueData}/>
+				</Container>
+			</Row>
+			
+			
 		</main>
 	);
 };
