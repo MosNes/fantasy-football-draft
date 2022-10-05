@@ -111,7 +111,10 @@ query getLeague($id: ID!) {
       _id
       name
       join_code
-      active_user
+      active_user {
+        _id
+        username
+      }
       users {
         _id
         username
