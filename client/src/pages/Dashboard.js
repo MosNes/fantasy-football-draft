@@ -23,9 +23,9 @@ import {
 const Dashboard = () => {
 	const { leagueId: leagueParam } = useParams();
 
-	// const { leagueLoading, leagueData } = useQuery(GET_LEAGUE, {
-	// 	variables: { id: leagueParam },
-	// });
+	const leagueQuery = useQuery(GET_LEAGUE, {
+		variables: { id: leagueParam },
+	});
 
 	// const { userLoading, userData } = useQuery(ME);
 
@@ -34,22 +34,22 @@ const Dashboard = () => {
 	// console.log('error', error);
 	// const user = userData?.me || {};
 
-    const { testLoading, testData } = useQuery(GET_PLAYERS);
+    const testData = useQuery(GET_PLAYERS);
 
-	useEffect(() => {
-		console.log('... testData', testData);
-	}, [testLoading, testData]);
+	// useEffect(() => {
+	// 	console.log('... testData', testData);
+	// }, [testLoading, testData]);
 
 	// const league = leagueData?.getLeague || {};
 	// const league = leagueData;
 
-	const test = testData?.getPlayers || {};
+	const leagueData = leagueQuery.data?.getLeague || {};
 
 	return (
 		<main>
 			This is the Dashboard
 			{console.log(leagueParam)}
-			{/* {console.log('test', test.getPlayers)} */}
+			{console.log('test', leagueData)}
 			<DataTable />
 		</main>
 	);
