@@ -1,5 +1,5 @@
 //User dashboard page
-import React, { Profiler, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 
 import Auth from '../utils/auth';
@@ -27,14 +27,8 @@ const Dashboard = () => {
 		variables: { id: leagueParam },
 	});
 
-	// const { userLoading, userData } = useQuery(ME);
+	const userQuery = useQuery(ME);
 
-	
-	// console.log('testData', testData);
-	// console.log('error', error);
-	// const user = userData?.me || {};
-
-    const testData = useQuery(GET_PLAYERS);
 
 	// useEffect(() => {
 	// 	console.log('... testData', testData);
@@ -44,13 +38,18 @@ const Dashboard = () => {
 	// const league = leagueData;
 
 	const leagueData = leagueQuery.data?.getLeague || {};
+	const userData = userQuery.data?.me || {};
+
+	if (userQuery.loading || leagueQuery.loading ) {
+		return (
+			<div>LOADING!</div>
+		)
+	}
 
 	return (
 		<main>
 			This is the Dashboard
-			{console.log(leagueParam)}
-			{console.log('test', leagueData)}
-			<DataTable />
+			<DataTable leagueData={leagueData}/>
 		</main>
 	);
 };

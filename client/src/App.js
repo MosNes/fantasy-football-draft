@@ -50,9 +50,9 @@ function App() {
         <div className="flex-column justify-flex-start min-100-vh">
           <Header />
           <Routes>
-          <Route path="login/" element={<Login />} />
-          <Route path="signup/" element={<Signup />} />
-          <Route path="dashboard/:leagueId" element={<Dashboard />} />
+          <Route path="/login/" element={<Login />} />
+          <Route path="/signup/" element={<Signup />} />
+          <Route path="/dashboard/:leagueId" element={<Dashboard />} />
           </Routes>
           <Footer />
         </div>
