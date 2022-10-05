@@ -66,6 +66,9 @@ type Mutation {
     endDraft(league_id: ID!): League
     deleteLeague(league_id: ID!): League
 }
+type Mutation {
+    login(email: String!, password: String!): Auth
+}
 `;
 
 //export typeDefs
