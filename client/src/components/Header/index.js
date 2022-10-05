@@ -3,10 +3,12 @@ import React from 'react';
 import Auth from '../../utils/auth';
 import { Navbar, NavDropdown, Form, FormControl, Button, Nav } from 'react-bootstrap'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import Home from '../../pages/Home';
-import Dashboard from '../../pages/Dashboard';
-import Login from '../../pages/Login';
-import Signup from '../../pages/Signup';
+
+import './header.css';
+// import Home from '../../pages/Home';
+// import Dashboard from '../../pages/Dashboard';
+// import Login from '../../pages/Login';
+// import Signup from '../../pages/Signup';
 
 const Header = () => {
     const logout = event => {
@@ -39,7 +41,6 @@ const Header = () => {
         </nav>
 
     )
-
 }
 // const Header = () => {
 

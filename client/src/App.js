@@ -18,6 +18,11 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Dashboard from './pages/Dashboard';
 
+import Login from './pages/Login'
+// import Signup from './pages/Signup'
+// import Home from './pages/Home'
+import Dashboard from './pages/Dashboard'
+
 //create connection to backend apollo server
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -41,12 +46,28 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+// function App() {
+//   return (
+//     <ApolloProvider client={client}>
+//       <Router>
+//         <div className="App">
+//           <Header />
+//           <Home />
+//           <Footer />
+//         </div>
+//       </Router>
+//     </ApolloProvider>
+    
+//   );
+// }
+
 function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className="App">
+        <div className="flex-column justify-flex-start min-100-vh">
           <Header />
+
           <Routes>
           <Route path="dashboard/:leagueId" element={<Dashboard />} />
           </Routes>
@@ -54,8 +75,6 @@ function App() {
         </div>
       </Router>
     </ApolloProvider>
-    
   );
 }
-
 export default App;

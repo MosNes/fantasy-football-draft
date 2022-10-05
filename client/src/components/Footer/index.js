@@ -1,17 +1,22 @@
 //Footer component
+import { isNonEmptyArray } from '@apollo/client/utilities';
 import React from 'react';
 import { FaTwitter, FaGithub, FaInstagram } from 'react-icons/fa';
+import Dropdown from 'react-bootstrap/Dropdown';
+import './footer.css'
+
+
 
 const Footer = () => {
   return (
-    <section>
+    <footer className="fixed-bottom d-flex justify-content-evenly">
       <div className="footer-container">
-        <h2> Contact Us </h2>
-        <a href="mailto:yaysportsdraft@gmail.com">Email</a>
+        <p> Contact Us </p>
+        <a className="email" href="mailto:yaysportsdraft@gmail.com">Email Us</a>
       </div>
 
       <div className="footer-container">
-        <h2> Follow Us </h2>
+        <p> Follow Us </p>
         <a href="www.twitter/yaysportsdraft"
           className="twitter">
           <FaTwitter size="30px" />
@@ -27,17 +32,21 @@ const Footer = () => {
       </div>
 
       <div className="footer-container">
-        <h2> Contributors </h2>
-        <ul>
-          <li>Cody Cooper</li>
-          <li>Dejuan Strong</li>
-          <li>Mackenzie Abe</li>
-          <li>McKinley Faustin</li>
-          <li>Moses Nester</li>
-        </ul>
-      </div>
+      <Dropdown>
+      <Dropdown.Toggle variant="primary" id="dropdown-basic">
+       Contributors
+      </Dropdown.Toggle>
 
-</section>
+      <Dropdown.Menu>
+        <Dropdown.Item >Cody Cooper</Dropdown.Item>
+        <Dropdown.Item>Dejuan Strong</Dropdown.Item>
+        <Dropdown.Item>Mackenzie Abe</Dropdown.Item>
+        <Dropdown.Item>McKinley Faustin</Dropdown.Item>
+        <Dropdown.Item>Moses Nester</Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+        </div>
+</footer>
   )
 }
 
