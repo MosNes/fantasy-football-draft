@@ -1,6 +1,3 @@
-//capture environment variables
-require('dotenv').config();
-
 const jwt = require('jsonwebtoken');
 
 //specify secret in .env file

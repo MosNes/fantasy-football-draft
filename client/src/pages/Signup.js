@@ -42,7 +42,8 @@ const Signup = () => {
       };
 
     return (
-        <main className="flex-row justify-center mb-4">
+        <main className='container justify-content-center'>
+        <div className="flex-row justify-center mb-4">
           <div className="col-12 col-md-6">
             <div className="card">
               <h4 className="card-header">Sign Up</h4>
@@ -83,6 +84,7 @@ const Signup = () => {
                 {error && <div>Signup failed</div>}
               </div>
             </div>
+          </div>
           </div>
         </main>
       );
