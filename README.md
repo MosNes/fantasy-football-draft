@@ -85,7 +85,6 @@ To install the project follow these steps:
 - MongoDB
 - Node.js
 - GraphQL
-- Cookies for authentication
+- JWT authentication
 - Heroku
-- GET and POST Routes
 - Github
