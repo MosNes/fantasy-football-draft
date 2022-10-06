@@ -1,6 +1,6 @@
 # Welcome to Fantasy Football
 
-Fantasy Football is a store front allowing you to find electronic devices and parts to add to your cart for purchase. 
+Fantasy Football is a web application that allows you to fantasize amongst friends with your own football league. Pick your favorite players, draft them to your team and defeat your friends on a weekly bases.
 
 Try it here,
 
@@ -32,23 +32,26 @@ https://limitless-dusk-20283.herokuapp.com/
 This site provides an easy way to find a reburbished electronic item, add it to your cart and purchase the item at your convenience as long as the item is still available.
 
 ## The Requirements
-- Use Node.js and Express.js to create a RESTful API.
-- Use a template engine such as Handlebars.js.
-- Use MySQL and the Sequelize ORM for the database.
-- Must include authenication (cookies and express-session).
-- Use at least one new library, package, or technology that we haven't discuss.
+- Use React for the front end.
+- Use GraphQL with a Node.js and Express.js server.
+- Use MongoDB and the Mongoose ODM for the database.
+- Use queries and mutations for retrieving, adding, updating, and deleting data.
+- Be deployed using Heroku (with data).
 - Have both GET and Post routes for retrieving and adding new data.
-- Have a polished, responsive, interactive UI.
-- Deploy using Heroku (with data).
-- Must have a folder structure that meets the MVC paradigm.
-- Must portect API keys and sensitive information with environment variables.
-- Have a clean repository that meets quality coding standards.
-- Have a quality README.
+- Have a polished UI.
+- Be responsive.
+- Be interactive (i.e., accept and respond to user input).
+- Include authentication (JWT).
+- Protect sensitive API key information on the server.
+- Have a clean repository that meets quality coding standards (file structure, naming conventions, best practices for class and id naming conventions, indentation, quality comments, etc.).
+- Have a high-quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
 
 ## User Story
-AS A Technology enthusiast I WANT to shop for and buy repaired/refurbished electronics SO THAT I can find tools I need at a reasonable price.
+User Story:
+AS A football fanatic I WANT to play a game amongst friends, associates, or even meet new friends while competing with their knowledge of the game SO THAT I enjoy NFL sunday’s even when my team sucks.
 
-GIVEN a dashboard with a search input WHEN I search for an item THEN I am presented with various products that I can choose from to purchase WHEN I am not trying to purchase the products at the very moment, I can save them to my personal cart that is saved under my account and revisit it at my choosing.
+GIVEN a team with 16 spots, I will draft players by using the search input in my dashboard. WHEN I am presented with various players of different positions, I can choose and  add them to my team. WHEN my team roster is full I can drop players and pick up new  players. 
+
 
 ## 🛠️ Installation Steps
 The project was uploaded to GitHub at the following [repository] (https://github.com/u276875/BringTheTech.git)
@@ -60,23 +63,24 @@ To install the project follow these steps:
 1. Run the app with node server.js
 
 ## 🌟 Authors
-- Austin Davis
-- Bradley Woodle
-- Brendan Bischoff
-- Darryl Peterson
+- Cody Cooper
+- Dejuan Strong
+- Mackenzie Abe
 - McKinley Faustin
+- Moses Nester
 
 ## 💻 Credits
 - Moses Nester
-  - Front-end scripting & Presentation
+  - Back-end scripting & Presentation
 - Mackenzie Abe
-  - Front-end scripting & Back-end scripting
+  - Front-end scripting & Presentation 
 - Dejuan Strong
-  - Front-end mastermind - designed and styled application visuals/page layout
+  - Assets builder, deploying on heroku & Presentation
 - Cody Cooper
-  - Assets builder, Heroku specialist & Presentation
+  - Front-end scripting & requirement keeper
 - McKinley Faustin
-  - Back-end support, README, and Presentation 
+  - Front-end scripting, README, and Presentation 
+
 
 ## 🍰 Technologies Used
 - HTML
