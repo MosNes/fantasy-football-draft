@@ -5,21 +5,12 @@ import { GET_TEAM } from '../../utils/queries';
 
 const TeamInfo = ({ teams }) => {
 
-    // const { data: teamData, loading } = useQuery(GET_TEAM, {
-    //     variables: { _id: team._id }
-    // });
-
-    // if (loading) {
-    //     return (<div>LOADING!</div>)
-    // }
-
     return (
         <div>
-            <div>Teams</div>
             {/* returns a card for each team in the teams array */}
             {teams.map((team) => {
                 return (
-                    <Card>
+                    <Card key={team._id}>
                         <Card.Body>
                             <Card.Title>
                                 {team.name}

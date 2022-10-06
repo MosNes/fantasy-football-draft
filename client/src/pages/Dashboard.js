@@ -8,6 +8,7 @@ import Auth from '../utils/auth';
 //react components
 import DataTable from '../components/DataTable';
 import TeamInfo from '../components/TeamInfo';
+import LeagueInfo from '../components/LeagueInfo';
 
 import { useQuery, useMutation } from '@apollo/client';
 
@@ -46,14 +47,13 @@ const Dashboard = () => {
 	}
 
 	return (
-		<main>
-			This is the Dashboard
-			<Row>
-				<Container className='p-3'>This is the League Info Component</Container>
+		<main className='p-3'>
+			<Row className='border-bottom'>
+				<Container className='p-3'><LeagueInfo leagueData={leagueData.getLeague} userId={userId} /></Container>
 			</Row>
 			<Row>
-				<Container className='col-4 p-3'><TeamInfo teams={leagueData.getLeague.teams}/></Container>
-				<Container className='col-8 p-3'>
+				<Container className='col-md-4 p-3'><TeamInfo teams={leagueData.getLeague.teams}/></Container>
+				<Container className='col-md-8 p-3'>
 					<DataTable username={username} playerData={leagueData.getLeague.player_pool} teams={leagueData.getLeague.teams} />
 				</Container>
 			</Row>
