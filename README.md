@@ -2,9 +2,7 @@
 
 Fantasy Football is a web application that allows you to fantasize amongst friends with your own football league. Pick your favorite players, draft them to your team and defeat your friends on a weekly bases.
 
-Try it here,
-
-
+Try it [here](https://fantasy-football-draft-app.herokuapp.com/)
 
 
 ## 🧐 Table of Contents
@@ -25,9 +23,10 @@ Try it here,
 
 ## 🚀 Demo
 
+[Deployed App](https://fantasy-football-draft-app.herokuapp.com/)
 
+![screenshot](assets/Screenshot1.JPG)
 
-This site provides an easy way to find a reburbished electronic item, add it to your cart and purchase the item at your convenience as long as the item is still available.
 
 ## The Requirements
 - Use React for the front end.
@@ -48,7 +47,7 @@ This site provides an easy way to find a reburbished electronic item, add it to 
 User Story:
 AS A football fanatic I WANT to play a game amongst friends, associates, or even meet new friends while competing with their knowledge of the game SO THAT I enjoy NFL sunday’s even when my team sucks.
 
-GIVEN a team with 16 spots, I will draft players by using the search input in my dashboard. WHEN I am presented with various players of different positions, I can choose and  add them to my team. WHEN my team roster is full I can drop players and pick up new  players. 
+GIVEN a team with 15 spots, I will draft players by using the search input in my dashboard. WHEN I am presented with various players of different positions, I can choose and  add them to my team. WHEN my team roster is full I can drop players and pick up new  players. 
 
 
 ## 🛠️ Installation Steps
@@ -69,11 +68,11 @@ To install the project follow these steps:
 
 ## 💻 Credits
 - Moses Nester
-  - Back-end scripting & Presentation
+  - Front-end scripting & Back-end scripting
 - Mackenzie Abe
   - Front-end scripting & Presentation 
 - Dejuan Strong
-  - Assets builder, deploying on heroku & Presentation
+  - Assets builder & Presentation
 - Cody Cooper
   - Front-end scripting & requirement keeper
 - McKinley Faustin
