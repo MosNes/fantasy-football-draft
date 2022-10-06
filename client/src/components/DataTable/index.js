@@ -5,7 +5,7 @@ import { ADD_PLAYER } from '../../utils/mutations';
 import { useMutation, useQuery } from '@apollo/client';
 import { ME } from '../../utils/queries';
 
-const DataTable = ({ leagueData, team }) => {
+const DataTable = ({ playerData, team }) => {
 
     const userData = useQuery(ME);
 
@@ -46,10 +46,9 @@ const DataTable = ({ leagueData, team }) => {
                 </tr>
             </thead>
             <tbody>
-                {leagueData &&
+                {playerData &&
                     //map through each player and render it as a row on table
-                    leagueData.getLeague.player_pool.map((player) => {
-
+                    playerData.map((player) => {
                         //only create a row if drafted === false
                         if (!player.drafted) {
                             return (

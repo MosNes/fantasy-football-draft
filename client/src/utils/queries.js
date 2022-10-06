@@ -85,7 +85,9 @@ export const GET_TEAM = gql`
     query getTeam($_id: ID!) {
         getTeam( _id: $_id ) {
             name
-            league_id
+            league_id {
+                _id
+            }
             owner
             playerCount
             players {
