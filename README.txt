@@ -56,7 +56,7 @@ The project was uploaded to GitHub at the following [repository] (https://github
 
 To install the project follow these steps:
 
-1. Clone the application from GitHub with (git clone https://github.com/u276875/BringTheTech.git) From the root folder.
+1. Clone the application from GitHub with (git clone https://github.com/MosNes/fantasy-football-draft.git) From the root folder.
 1. npm install
 1. Run the app with node server.js
 
