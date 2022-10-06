@@ -52,7 +52,7 @@ GIVEN a team with 16 spots, I will draft players by using the search input in my
 
 
 ## 🛠️ Installation Steps
-The project was uploaded to GitHub at the following [repository] (https://github.com/u276875/BringTheTech.git)
+The project was uploaded to GitHub at the following [repository] (https://github.com/MosNes/fantasy-football-draft.git)
 
 To install the project follow these steps:
 
