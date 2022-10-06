@@ -4,9 +4,7 @@ Fantasy Football is a web application that allows you to fantasize amongst frien
 
 Try it here,
 
-https://limitless-dusk-20283.herokuapp.com/
 
-![Screen Shot 2022-08-14 at 1 14 20 PM](https://user-images.githubusercontent.com/101281767/184547961-9ecf5a83-c467-4fe2-b80c-ed6231be3ef4.png)
 
 
 ## 🧐 Table of Contents
