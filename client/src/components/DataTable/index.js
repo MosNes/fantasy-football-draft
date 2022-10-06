@@ -24,6 +24,7 @@ const DataTable = ({ playerData, teams, username }) => {
             await addPlayer({
                 variables: { playerId, teamId }
             });
+            document.location.reload();
         } catch (e) {
             console.error(e);
         }
@@ -35,6 +36,9 @@ const DataTable = ({ playerData, teams, username }) => {
                 <tr>
                     <th>
                         Name
+                    </th>
+                    <th>
+                        Number
                     </th>
                     <th>
                         Team
@@ -60,6 +64,7 @@ const DataTable = ({ playerData, teams, username }) => {
                                 //create key for reference
                                 <tr key={player._id}>
                                     <td>{player.name}</td>
+                                    <td className=''>{player.number}</td>
                                     <td>{player.team}</td>
                                     <td className='text-center'>{player.position}</td>
                                     <td className='text-center'>{player.projected_points}</td>

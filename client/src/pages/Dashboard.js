@@ -54,7 +54,8 @@ const Dashboard = () => {
 			<Row>
 				<Container className='col-md-4 p-3'><TeamInfo teams={leagueData.getLeague.teams}/></Container>
 				<Container className='col-md-8 p-3'>
-					<DataTable username={username} playerData={leagueData.getLeague.player_pool} teams={leagueData.getLeague.teams} />
+					<h2 className='mb-4'>Available Players</h2>
+					<DataTable activeUser={leagueData.getLeague.active_user} userId={userId} username={username} playerData={leagueData.getLeague.player_pool} teams={leagueData.getLeague.teams} />
 				</Container>
 			</Row>
 			
