@@ -1,11 +1,28 @@
 import React from 'react';
-import { Table, Button } from 'react-bootstrap'
+import { Table, Button } from 'react-bootstrap';
 
-const DataTable = ({ leagueData }) => {
+import { ADD_PLAYER } from '../../utils/mutations';
+import { useMutation, useQuery } from '@apollo/client';
+import { ME } from '../../utils/queries';
 
-    const handleDraft = (event) => {
+const DataTable = ({ leagueData, team }) => {
+
+    const userData = useQuery(ME);
+
+    const [ addPlayer, { error }] = useMutation(ADD_PLAYER);
+
+    const handleAddPlayer = async (event, playerId, teamId) => {
+        console.log(playerId)
         event.preventDefault();
-    }
+
+        try {
+            await addPlayer({
+                variables: { playerId, teamId }
+            });
+        } catch (e) {
+            console.error(e);
+        }
+    };
 
     return (
         <Table hover>
@@ -42,7 +59,8 @@ const DataTable = ({ leagueData }) => {
                                     <td>{player.team}</td>
                                     <td className='text-center'>{player.position}</td>
                                     <td className='text-center'>{player.projected_points}</td>
-                                    <td><Button>Draft</Button></td>
+                                    {/* on click pass player._id to handleAddPlayer function */}
+                                    <td><Button onClick={event => handleAddPlayer(event, player._id, team._id)}>Draft</Button></td>
                                 </tr>
                             )
                         }

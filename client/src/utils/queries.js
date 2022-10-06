@@ -50,6 +50,7 @@ export const ME = gql`
                 _id
             }
             teams {
+                _id
                 name
                 players {
                     _id
