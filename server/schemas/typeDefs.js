@@ -35,6 +35,7 @@ type League {
     active_user: User
     player_pool: [Player]
     join_code: String
+    teams: [Team]
 }
 type Auth {
     token: ID!
