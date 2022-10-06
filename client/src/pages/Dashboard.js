@@ -48,6 +48,13 @@ const Dashboard = () => {
 		)
 	}
 
+	let activeUserId
+	if( leagueData.getLeague.active_user === null) {
+		activeUserId = '';
+	} else {
+		activeUserId = leagueData.getLeague.active_user._id;
+	}
+
 	return (
 		<main className='p-3'>
 			<Row className='border-bottom'>
@@ -57,7 +64,7 @@ const Dashboard = () => {
 				<Container className='col-md-4 p-3'><TeamInfo teams={leagueData.getLeague.teams}/></Container>
 				<Container className='col-md-8 p-3'>
 					<h2 className='mb-4'>Available Players</h2>
-					<DataTable activeUserId={leagueData.getLeague.active_user._id} userId={userId} username={username} playerData={leagueData.getLeague.player_pool} teams={leagueData.getLeague.teams} />
+					<DataTable activeUserId={ activeUserId } userId={userId} username={username} playerData={leagueData.getLeague.player_pool} teams={leagueData.getLeague.teams} />
 				</Container>
 			</Row>
 			

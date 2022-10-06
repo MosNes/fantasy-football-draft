@@ -69,7 +69,7 @@ const DataTable = ({ playerData, teams, username, activeUserId, userId }) => {
                                     <td className='text-center'>{player.position}</td>
                                     <td className='text-center'>{player.projected_points}</td>
                                     {/* on click pass player._id to handleAddPlayer function */}
-                                    {activeUserId === userId ? (
+                                    { activeUserId === userId ? (
                                         <td><Button onClick={event => handleAddPlayer(event, player._id, userTeam._id)}>Draft</Button></td>
                                     ) : (
                                         <td><Button disabled className='btn-secondary'>Draft</Button></td>
