@@ -1,10 +1,14 @@
 import React from 'react';
-import { Table } from 'react-bootstrap'
+import { Table, Button } from 'react-bootstrap'
 
 const DataTable = ({ leagueData }) => {
 
+    const handleDraft = (event) => {
+        event.preventDefault();
+    }
+
     return (
-        <Table striped hover>
+        <Table hover>
             <thead>
                 <tr>
                     <th>
@@ -13,22 +17,37 @@ const DataTable = ({ leagueData }) => {
                     <th>
                         Team
                     </th>
-                    <th>
+                    <th className='text-center'>
                         Position
                     </th>
-                    <th>
+                    <th className='text-center'>
                         Projected Points
                     </th>
                     <th>
-                        {leagueData &&
-                            //map through each player and render it as a row on table
-                            leagueData.getLeague
-                        }
+
                     </th>
                 </tr>
             </thead>
             <tbody>
-                
+                {leagueData &&
+                    //map through each player and render it as a row on table
+                    leagueData.player_pool.map((player) => {
+
+                        //only create a row if drafted === false
+                        if (!player.drafted) {
+                            return (
+                                //create key for reference
+                                <tr key={player._id}>
+                                    <td>{player.name}</td>
+                                    <td>{player.team}</td>
+                                    <td className='text-center'>{player.position}</td>
+                                    <td className='text-center'>{player.projected_points}</td>
+                                    <td><Button>Draft</Button></td>
+                                </tr>
+                            )
+                        }
+                    })
+                }
             </tbody>
         </Table>
     )

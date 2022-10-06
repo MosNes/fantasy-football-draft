@@ -161,7 +161,7 @@ const resolvers = {
 
                 //updates User record with league ID
                 await User.findByIdAndUpdate(
-                    user.context._id,
+                    context.user._id,
                     { league_id: league._id },
                     {new: true}
                 );
@@ -211,7 +211,7 @@ const resolvers = {
 
                 //updates User record with league ID
                 await User.findByIdAndUpdate(
-                    user.context._id,
+                    context.user._id,
                     { league_id: league._id },
                     {new: true}
                 );
