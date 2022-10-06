@@ -5,9 +5,14 @@ import { ADD_PLAYER } from '../../utils/mutations';
 import { useMutation, useQuery } from '@apollo/client';
 import { ME } from '../../utils/queries';
 
-const DataTable = ({ playerData, team }) => {
+const DataTable = ({ playerData, teams, username }) => {
 
-    const userData = useQuery(ME);
+    console.log("teams :", teams);
+
+    //finds the logged in user's team by filtering the array of teams in the league and matching the one where the owner = user's username
+    const userTeam = teams.filter( team => team.owner === username)[0];
+
+    // const userData = useQuery(ME);
 
     const [ addPlayer, { error }] = useMutation(ADD_PLAYER);
 
@@ -59,7 +64,7 @@ const DataTable = ({ playerData, team }) => {
                                     <td className='text-center'>{player.position}</td>
                                     <td className='text-center'>{player.projected_points}</td>
                                     {/* on click pass player._id to handleAddPlayer function */}
-                                    <td><Button onClick={event => handleAddPlayer(event, player._id, team._id)}>Draft</Button></td>
+                                    <td><Button onClick={event => handleAddPlayer(event, player._id, userTeam._id)}>Draft</Button></td>
                                 </tr>
                             )
                         }

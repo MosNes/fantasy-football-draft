@@ -132,13 +132,22 @@ query getLeague($id: ID!) {
           name
           _id
           owner
-          players {
+        }
+      }
+      teams {
+        _id
+        name
+        owner
+        playerCount
+        league_id {
             _id
-            name
-            position
-            number
-            projected_points
-          }
+        }
+        players {
+          _id
+          name
+          position
+          number
+          projected_points
         }
       }
       player_pool {
