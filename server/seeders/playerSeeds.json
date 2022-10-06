@@ -1,0 +1,422 @@
+[
+ {
+  "name": "Johnathan Taylor",
+  "position": "RB",
+  "number": 28,
+  "team": "Colts",
+  "projected_points": 256.87
+ },
+ {
+  "name": "Cooper Kupp",
+  "position": "WR",
+  "number": 10,
+  "team": "Rams",
+  "projected_points": 285.25
+ },
+ {
+  "name": "Josh Allen",
+  "position": "QB",
+  "number": 17,
+  "team": "Bills",
+  "projected_points": 349.91
+ },
+ {
+  "name": "Christian Mccafrey",
+  "position": "RB",
+  "number": 22,
+  "team": "Panthers",
+  "projected_points": 234.29
+ },
+ {
+  "name": "Lamar Jackson",
+  "position": "QB",
+  "number": 8,
+  "team": "Ravens",
+  "projected_points": 331.73
+ },
+ {
+  "name": "Jamaar Chase",
+  "position": "WR",
+  "number": 1,
+  "team": "Bengals",
+  "projected_points": 187.37
+ },
+ {
+  "name": "Austin Eckler",
+  "position": "RB",
+  "number": 30,
+  "team": "Chargers",
+  "projected_points": 229.82
+ },
+ {
+  "name": "Joe MIxon",
+  "position": "RB",
+  "number": 28,
+  "team": "Bengals",
+  "projected_points": 218.32
+ },
+ {
+  "name": "Alvin Kamara",
+  "position": "RB",
+  "number": 41,
+  "team": "Saints",
+  "projected_points": 209.73
+ },
+ {
+  "name": "Joe Burrow",
+  "position": "QB",
+  "number": 9,
+  "team": "Bengals",
+  "projected_points": 284.92
+ },
+ {
+  "name": "Najee Harris",
+  "position": "RB",
+  "number": 22,
+  "team": "Steelers",
+  "projected_points": 200.86
+ },
+ {
+  "name": "Travis Kelce",
+  "position": "TE",
+  "number": 87,
+  "team": "Chiefs",
+  "projected_points": 184.92
+ },
+ {
+  "name": "Tyreke Hill",
+  "position": "WR",
+  "number": 10,
+  "team": "Dolphins",
+  "projected_points": 213.43
+ },
+ {
+  "name": "Jalen Hurts",
+  "position": "QB",
+  "number": 1,
+  "team": "Eagles",
+  "projected_points": 310.88
+ },
+ {
+  "name": "Ezekel Elliot",
+  "position": "RB",
+  "number": 21,
+  "team": "Cowboys",
+  "projected_points": 165.82
+ },
+ {
+  "name": "Nick Chubb",
+  "position": "RB",
+  "number": 24,
+  "team": "Browns",
+  "projected_points": 196.87
+ },
+ {
+  "name": "Kyler Murray",
+  "position": "QB",
+  "number": 1,
+  "team": "Cardinals",
+  "projected_points": 314.26
+ },
+ {
+  "name": "Cee Dee Lamb",
+  "position": "WR",
+  "number": 88,
+  "team": "Cowboys",
+  "projected_points": 188.01
+ },
+ {
+  "name": "Jalen Waddle",
+  "position": "WR",
+  "number": 17,
+  "team": "Dolphins",
+  "projected_points": 182.09
+ },
+ {
+  "name": "Mark Andrews",
+  "position": "TE",
+  "number": 89,
+  "team": "Ravens",
+  "projected_points": 166.27
+ },
+ {
+  "name": "Davante Adams",
+  "position": "WR",
+  "number": 17,
+  "team": "Raiders",
+  "projected_points": 200.11
+ },
+ {
+  "name": "Aaron Jones",
+  "position": "RB",
+  "number": 33,
+  "team": "Packers",
+  "projected_points": 191.07
+ },
+ {
+  "name": "Derrick Henry",
+  "position": "RB",
+  "number": 22,
+  "team": "Titans",
+  "projected_points": 208.51
+ },
+ {
+  "name": "Dalvin Cook",
+  "position": "RB",
+  "number": 4,
+  "team": "Vikings",
+  "projected_points": 211.77
+ },
+ {
+  "name": "Kyle Pitts",
+  "position": "TE",
+  "number": 8,
+  "team": "Falcons",
+  "projected_points": 120.68
+ },
+ {
+  "name": "Drake London",
+  "position": "WR",
+  "number": 5,
+  "team": "Falcons",
+  "projected_points": 149.66
+ },
+ {
+  "name": "Coradelle Patterson",
+  "position": "RB",
+  "number": 84,
+  "team": "Falcons",
+  "projected_points": 178.16
+ },
+ {
+  "name": "DK Metcalf",
+  "position": "WR",
+  "number": 14,
+  "team": "Seahawks",
+  "projected_points": 135.75
+ },
+ {
+  "name": "Amon-Ra St. Brown",
+  "position": "WR",
+  "number": 14,
+  "team": "Lions",
+  "projected_points": 174.82
+ },
+ {
+  "name": "Deandre Swift",
+  "position": "RB",
+  "number": 32,
+  "team": "Lions",
+  "projected_points": 213.02
+ },
+ {
+  "name": "George Kittle",
+  "position": "TE",
+  "number": 85,
+  "team": "49ers",
+  "projected_points": 125.36
+ },
+ {
+  "name": "Justin Jefferson",
+  "position": "WR",
+  "number": 18,
+  "team": "Vikings",
+  "projected_points": 219.08
+ },
+ {
+  "name": "Saquon Barkley",
+  "position": "RB",
+  "number": 26,
+  "team": "Giants",
+  "projected_points": 196.64
+ },
+ {
+  "name": "Deebo Samuel",
+  "position": "WR",
+  "number": 19,
+  "team": "49ers",
+  "projected_points": 189.79
+ },
+ {
+  "name": "AJ Brown",
+  "position": "WR",
+  "number": 11,
+  "team": "Eagles",
+  "projected_points": 170.84
+ },
+ {
+  "name": "Javonte Williams",
+  "position": "RB",
+  "number": 33,
+  "team": "Broncos",
+  "projected_points": 181.64
+ },
+ {
+  "name": "Courtland Sutton",
+  "position": "WR",
+  "number": 14,
+  "team": "Broncos",
+  "projected_points": 164.57
+ },
+ {
+  "name": "David Montgomery",
+  "position": "RB",
+  "number": 32,
+  "team": "Bears",
+  "projected_points": 172.21
+ },
+ {
+  "name": "Breece Hall",
+  "position": "RB",
+  "number": 20,
+  "team": "Jets",
+  "projected_points": 129.11
+ },
+ {
+  "name": "Darren Waller",
+  "position": "TE",
+  "number": 83,
+  "team": "Raiders",
+  "projected_points": 135.57
+ },
+ {
+  "name": "Dameon Pierce",
+  "position": "RB",
+  "number": 31,
+  "team": "Texans",
+  "projected_points": 143.3
+ },
+ {
+  "name": "Steffon Diggs",
+  "position": "WR",
+  "number": 14,
+  "team": "Bills",
+  "projected_points": 221.75
+ },
+ {
+  "name": "Mike Evans",
+  "position": "WR",
+  "number": 13,
+  "team": "Buccaneers",
+  "projected_points": 190.2
+ },
+ {
+  "name": "Keenan Allen",
+  "position": "WR",
+  "number": 13,
+  "team": "Chargers",
+  "projected_points": 157.49
+ },
+ {
+  "name": "James Robinson",
+  "position": "RB",
+  "number": 28,
+  "team": "Jaguars",
+  "projected_points": 164.8
+ },
+ {
+  "name": "Trevor Lawrence",
+  "position": "QB",
+  "number": 25,
+  "team": "Jaguars",
+  "projected_points": 239.2
+ },
+ {
+  "name": "Travis Etienne Jr",
+  "position": "RB",
+  "number": 1,
+  "team": "Jaguars",
+  "projected_points": 130.69
+ },
+ {
+  "name": "Terry McLaurin",
+  "position": "WR",
+  "number": 17,
+  "team": "Commanders",
+  "projected_points": 141.72
+ },
+ {
+  "name": "Elijah Mitchell",
+  "position": "RB",
+  "number": 25,
+  "team": "49ers",
+  "projected_points": 170.89
+ },
+ {
+  "name": "Justin Herbert",
+  "position": "QB",
+  "number": 10,
+  "team": "Chargers",
+  "projected_points": 309.71
+ },
+ {
+  "name": "Leonard Fournette",
+  "position": "RB",
+  "number": 7,
+  "team": "Buccaneers",
+  "projected_points": 203.43
+ },
+ {
+  "name": "DJ Moore",
+  "position": "WR",
+  "number": 2,
+  "team": "Panthers",
+  "projected_points": 123.38
+ },
+ {
+  "name": "Tee Higgins",
+  "position": "WR",
+  "number": 85,
+  "team": "Bengals",
+  "projected_points": 175.61
+ },
+ {
+  "name": "Jerry Jeudy",
+  "position": "WR",
+  "number": 10,
+  "team": "Broncos",
+  "projected_points": 156.96
+ },
+ {
+  "name": "Mike Williams",
+  "position": "WR",
+  "number": 81,
+  "team": "Chargers",
+  "projected_points": 162.44
+ },
+ {
+  "name": "Tom Brady",
+  "position": "QB",
+  "number": 12,
+  "team": "Buccaners",
+  "projected_points": 287.03
+ },
+ {
+  "name": "Adam Theilien",
+  "position": "WR",
+  "number": 19,
+  "team": "Vikings",
+  "projected_points": 155.59
+ },
+ {
+  "name": "Michael Thomas",
+  "position": "WR",
+  "number": 13,
+  "team": "Saints",
+  "projected_points": 165.67
+ },
+ {
+  "name": "Deandre Hopkins",
+  "position": "WR",
+  "number": 10,
+  "team": "Cardinals",
+  "projected_points": 124.45
+ },
+ {
+    "name": "Jimmy Schwankyboi",
+  "position": "QB",
+  "number": 999,
+  "team": "Buccaneers",
+  "projected_points": 123.45
+ }
+]

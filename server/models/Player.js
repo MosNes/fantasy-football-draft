@@ -3,24 +3,38 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const playerSchema = new Schema({
-  firstName: {
-    type: String,
-    required: true,
-    trim: true
-  },
-  lastName: {
-    type: String,
-    required: true,
-    trim: true
-  },
-  team_id: {
+  _id: {
     type: Schema.Types.ObjectId,
-    ref: 'Team',
-    required: true
+  },
+  name: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  team: {
+    type: String,
+    trim: true
   },
   position: {
     type: String,
-    enum: ['C', 'RB', 'FB', 'HB', 'OG', 'OT', 'LG', 'LT', 'RG', 'RT', 'TE', 'QB', 'WR', 'CB', 'DE', 'DT', 'LB', 'ILB', 'MLB', 'NT', 'OLB', 'S', 'FS', 'SS', 'K', 'KR', 'LS', 'P', 'PR'] 
+    enum: ['C', 'RB', 'FB', 'HB', 'OG', 'OT', 'LG', 'LT', 'RG', 'RT', 'TE', 'QB', 'WR', 'CB', 'DE', 'DT', 'LB', 'ILB', 'MLB', 'NT', 'OLB', 'S', 'FS', 'SS', 'K', 'KR', 'LS', 'P', 'PR'],
+    required: true,
+    trim: true
+  },
+  projected_points: {
+    type: Number,
+  },
+  number: {
+    type: Number,
+    required: true
+  },
+  drafted: {
+    type: Boolean,
+    default: false
+  },
+  league_id: {
+    type: String,
+    default: null
   }
 });
 
