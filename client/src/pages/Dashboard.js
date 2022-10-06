@@ -37,7 +37,9 @@ const Dashboard = () => {
 	//gets the league data via the GET_LEAGUE query, but waits til the ME query fully resolves
 	const { data: leagueData } = useQuery(GET_LEAGUE, { variables, skip });
 
-	console.log(leagueData);
+	console.log("League Data: ", leagueData);
+	console.log("User ID: ", userId);
+	console.log("Username: ", username);
 
 	//if leagueData is undefined, display LOADING
 	if (!leagueData) {
@@ -55,7 +57,7 @@ const Dashboard = () => {
 				<Container className='col-md-4 p-3'><TeamInfo teams={leagueData.getLeague.teams}/></Container>
 				<Container className='col-md-8 p-3'>
 					<h2 className='mb-4'>Available Players</h2>
-					<DataTable activeUser={leagueData.getLeague.active_user} userId={userId} username={username} playerData={leagueData.getLeague.player_pool} teams={leagueData.getLeague.teams} />
+					<DataTable activeUserId={leagueData.getLeague.active_user._id} userId={userId} username={username} playerData={leagueData.getLeague.player_pool} teams={leagueData.getLeague.teams} />
 				</Container>
 			</Row>
 			

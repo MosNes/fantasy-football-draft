@@ -10,7 +10,7 @@ const TeamInfo = ({ teams }) => {
             {/* returns a card for each team in the teams array */}
             {teams.map((team) => {
                 return (
-                    <Card key={team._id}>
+                    <Card key={team._id} className="mb-3">
                         <Card.Body>
                             <Card.Title>
                                 {team.name}

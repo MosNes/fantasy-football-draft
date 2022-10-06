@@ -121,6 +121,9 @@ query getLeague($id: ID!) {
       active_user {
         _id
         username
+        email
+        firstName
+        lastName
       }
       users {
         _id
