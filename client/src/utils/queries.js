@@ -23,7 +23,9 @@ export const GET_USER = gql`
         firstName
         lastName
         email
-        league_id
+        league_id {
+            _id
+        }
         teams {
             _id
             name
@@ -44,7 +46,9 @@ export const ME = gql`
             email
             firstName
             lastName
-            league_id
+            league_id {
+                _id
+            }
             teams {
                 name
                 players {

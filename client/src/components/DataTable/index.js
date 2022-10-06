@@ -31,7 +31,7 @@ const DataTable = ({ leagueData }) => {
             <tbody>
                 {leagueData &&
                     //map through each player and render it as a row on table
-                    leagueData.player_pool.map((player) => {
+                    leagueData.getLeague.player_pool.map((player) => {
 
                         //only create a row if drafted === false
                         if (!player.drafted) {

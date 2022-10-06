@@ -1,5 +1,5 @@
 //User dashboard page
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 
@@ -22,20 +22,24 @@ import {
 } from '../utils/mutations';
 
 const Dashboard = () => {
-	const { leagueId: leagueParam } = useParams();
 
-	const leagueQuery = useQuery(GET_LEAGUE, {
-		variables: { id: leagueParam },
-	});
+	//https://stackoverflow.com/questions/49317582/how-to-chain-two-graphql-queries-in-sequence-using-apollo-client
+	// to chain two useQuery statements together, you have to use the skip property
 
-	const userQuery = useQuery(ME);
+	//gets the league_id returned from the user via the ME query
+	const { data: { me: { league_id: { _id } = {} } = {} } = {} } = useQuery(ME);
+	//sets it as the variables object for the GET_LEAGUE query
+	const variables = { id: _id };
+	//sets the skip property to skip if _id is undefined
+	const skip = _id === undefined;
+	//gets the league data via the GET_LEAGUE query, but waits til the ME query fully resolves
+	const { data: leagueData } = useQuery(GET_LEAGUE, { variables, skip });
 
-	const leagueData = leagueQuery.data?.getLeague || {};
-	const userData = userQuery.data?.me || {};
-
-	console.log(leagueData);
-
-	if (userQuery.loading || leagueQuery.loading ) {
+	//sets up the State of the dashboard
+	
+	
+	//if leagueData is undefined, display LOADING
+	if (!leagueData) {
 		return (
 			<div>LOADING!</div>
 		)

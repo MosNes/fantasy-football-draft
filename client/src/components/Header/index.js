@@ -28,11 +28,20 @@ const Header = () => {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
-                            <Nav.Link as={Link} to="/">Home</Nav.Link>
-                            <Nav.Link as={Link} to="/login">Login</Nav.Link>
-                            <Nav.Link as={Link} to="/signup">Signup</Nav.Link>
-                            <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
-
+                            {Auth.loggedIn() ? (
+                                <>
+                                    <Nav.Link as={Link} to="/">Home</Nav.Link>
+                                    <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
+                                    <Nav.Link as={Link} onClick={logout}>Logout</Nav.Link>
+                                </> 
+                            ):(
+                                <>
+                                    <Nav.Link as={Link} to="/login">Login</Nav.Link>
+                                    <Nav.Link as={Link} to="/signup">Signup</Nav.Link>
+                                </>     
+                            )}
+                            
+                        
                         </Nav>
 
                     </Navbar.Collapse>
