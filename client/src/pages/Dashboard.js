@@ -1,6 +1,7 @@
 //User dashboard page
 import React, { Profiler, useEffect } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
+import LeagueForm from '../components/LeagueForm';
 
 import Auth from '../utils/auth';
 
@@ -50,6 +51,7 @@ const Dashboard = () => {
 			This is the Dashboard
 			{console.log(leagueParam)}
 			{console.log('test', leagueData)}
+			<LeagueForm/>
 			<DataTable />
 		</main>
 	);
