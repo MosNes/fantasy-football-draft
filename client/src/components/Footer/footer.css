@@ -1,8 +1,10 @@
-footer {
+/* footer { */
     /* margin: 20px; */
-    background-color: rgb(170, 167, 167);
+    /* background-color: rgb(170, 167, 167);
+} */
+*{
+    color: black;
 }
-
 .email{
     text-decoration: none;
     
