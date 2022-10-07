@@ -1,10 +1,5 @@
-/* footer { */
-    /* margin: 20px; */
-    /* background-color: rgb(170, 167, 167);
-} */
-*{
-    color: black;
-}
+
+
 .email{
     text-decoration: none;
     
@@ -20,4 +15,3 @@ p{
     font-size: 20px;
     font-weight: bold;
 }
-

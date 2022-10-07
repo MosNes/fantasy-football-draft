@@ -33,7 +33,7 @@ const Footer = () => {
 
       <div className="footer-container">
       <Dropdown>
-      <Dropdown.Toggle variant="primary" id="dropdown-basic">
+      <Dropdown.Toggle id="dropdown-basic">
        Contributors
       </Dropdown.Toggle>
 

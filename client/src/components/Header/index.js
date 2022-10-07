@@ -5,10 +5,7 @@ import { Navbar, Nav } from 'react-bootstrap'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import './header.css';
-// import Home from '../../pages/Home';
-// import Dashboard from '../../pages/Dashboard';
-// import Login from '../../pages/Login';
-// import Signup from '../../pages/Signup';
+
 
 const Header = () => {
     const logout = event => {
@@ -16,32 +13,47 @@ const Header = () => {
         Auth.logout();
     }
     return (
-        <nav>
-            <div className='hero'>
-
-                <Navbar bg="dark" variant={"dark"} expand="lg">
-                    <Navbar.Brand href="#">Football Fantasy</Navbar.Brand>
-                    <Navbar.Toggle aria-controls="navbarScroll" />
-                    <Navbar.Collapse id="navbarScroll">
-                        <Nav
-                            className="mr-auto my-2 my-lg-0"
-                            style={{ maxHeight: '100px' }}
-                            navbarScroll
-                        >
-                            <Nav.Link as={Link} to="/">Home</Nav.Link>
-                            <Nav.Link as={Link} to="/login">Login</Nav.Link>
-                            <Nav.Link as={Link} to="/signup">Signup</Nav.Link>
-                            <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
-
-                        </Nav>
-
-                    </Navbar.Collapse>
-                </Navbar>
+        <section className='hero'>
+            <div>
+                <h1>Football Fantasy</h1>
             </div>
-        </nav>
-
-    )
+            <Navbar >
+            <Nav defaultActiveKey="/" className="flex-column">
+                <Nav.Link as={Link} to="/">Home</Nav.Link>
+                <Nav.Link as={Link} to="/login">Login</Nav.Link>
+                <Nav.Link as={Link} to="/signup">Signup</Nav.Link>
+                <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
+            </Nav>
+            </Navbar>
+        </section>
+    );
 }
+//         <nav>
+//             <div className='hero'>
+
+//                 <Navbar  variant={"dark"} expand="lg">
+//                     <Navbar.Brand className="text-body" href="#">Football Fantasy</Navbar.Brand>
+//                     <Navbar.Toggle aria-controls="navbarScroll" />
+//                     <Navbar.Collapse id="navbarScroll">
+//                         <Nav
+//                             className="justify-content-end" 
+//                             style={{ maxHeight: '100px' }}
+//                             navbarScroll
+//                         >
+//                             <Nav.Link as={Link} to="/">Home</Nav.Link>
+//                             <Nav.Link as={Link} to="/login">Login</Nav.Link>
+//                             <Nav.Link as={Link} to="/signup">Signup</Nav.Link>
+//                             <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
+
+//                         </Nav>
+
+//                     </Navbar.Collapse>
+//                 </Navbar>
+//             </div>
+//         </nav>
+
+//     )
+// }
 // const Header = () => {
 
 //     //logout function
