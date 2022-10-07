@@ -24,10 +24,12 @@
   "dependencies": {
     "apollo-server-express": "^3.10.2",
     "bcrypt": "^5.0.1",
+    "bootstrap": "^5.2.2",
     "dotenv": "^16.0.2",
     "express": "^4.18.1",
     "graphql": "^16.6.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.6.2"
+    "mongoose": "^6.6.2",
+    "uuid": "^9.0.0"
   }
 }
