@@ -3,49 +3,55 @@ import { isNonEmptyArray } from '@apollo/client/utilities';
 import React from 'react';
 import { FaTwitter, FaGithub, FaInstagram } from 'react-icons/fa';
 import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+
 import './footer.css'
 
 
 
 const Footer = () => {
   return (
-    <footer className="fixed-bottom d-flex justify-content-evenly">
+    <footer className="fixed-bottom d-flex justify-content-end justify-content-end">
       <div className="footer-container">
-        <p> Contact Us </p>
         <a className="email" href="mailto:yaysportsdraft@gmail.com">Email Us</a>
       </div>
-
       <div className="footer-container">
-        <p> Follow Us </p>
-        <a href="https://twitter.com/yaysportsdraft/status/1577691029989466112?s=20&t=LuoVfOQIaQ59x4AvHFW1iA"
+
+        {/* <p className='follow'> Follow Us </p> */}
+        <a href="www.twitter/yaysportsdraft"
+
           className="twitter">
-          <FaTwitter size="30px" />
+          <FaTwitter size="30px" color='black'/>
         </a>
         <a href="https://github.com/MosNes/fantasy-football-draft.git"
           className="github">
-          <FaGithub size="30px" />
+          <FaGithub size="30px" color='black'/>
         </a>
         <a href="https://www.instagram.com/yaysportsdraft/"
           className="instagram">
-          <FaInstagram size="30px" />
+          <FaInstagram size="30px" color='black' />
         </a>
       </div>
 
-      <div className="footer-container">
-      <Dropdown>
-      <Dropdown.Toggle variant="primary" id="dropdown-basic">
-       Contributors
-      </Dropdown.Toggle>
-
-      <Dropdown.Menu>
-        <Dropdown.Item >Cody Cooper</Dropdown.Item>
-        <Dropdown.Item>Dejuan Strong</Dropdown.Item>
-        <Dropdown.Item>Mackenzie Abe</Dropdown.Item>
-        <Dropdown.Item>McKinley Faustin</Dropdown.Item>
-        <Dropdown.Item>Moses Nester</Dropdown.Item>
-      </Dropdown.Menu>
-    </Dropdown>
-        </div>
+      <div className="mb-2">
+        {['up'].map((direction) => (
+          <DropdownButton
+            as={ButtonGroup}
+            key={direction}
+            id={`dropdown-button-drop-${direction}`}
+            drop={direction}
+            variant="secondary"
+            title={` Contributors`}
+          >
+            <Dropdown.Item eventKey="1">Cody Cooper</Dropdown.Item>
+            <Dropdown.Item eventKey="2">Dejuan Strong</Dropdown.Item>
+            <Dropdown.Item eventKey="3">Mackenzie Abe</Dropdown.Item>
+            <Dropdown.Item eventKey="4">McKinley Faustin</Dropdown.Item>
+            <Dropdown.Item eventKey="4">Moses Nester</Dropdown.Item>
+          </DropdownButton>
+        ))}
+      </div>
 </footer>
   )
 }
