@@ -12,7 +12,9 @@ export const LOGIN_USER = gql`
             username
             firstName
             lastName
-            league_id
+            league_id {
+              _id
+            }
             teams {
                 name
                 league_id {
@@ -33,7 +35,9 @@ export const ADD_USER = gql`
                 username
                 firstName
                 lastName
-                league_id
+                league_id {
+                  _id
+                }
             }
         }
     }

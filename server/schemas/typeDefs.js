@@ -1,13 +1,8 @@
-//import the graphQL tagged template function
 const { gql } = require('apollo-server-express');
-
-//---------------CREATE TYPEDEFS-----------------------------------
-
-//should first name/last name in model and here just be a username? or do we want first name/last name?
 const typeDefs = gql`
 type User {
     _id: ID
-    league_id: String
+    league_id: League
     firstName: String
     lastName: String
     username: String
@@ -40,6 +35,7 @@ type League {
     active_user: User
     player_pool: [Player]
     join_code: String
+    teams: [Team]
 }
 type Auth {
     token: ID!
@@ -70,6 +66,4 @@ type Mutation {
     login(email: String!, password: String!): Auth
 }
 `;
-
-//export typeDefs
 module.exports = typeDefs;
