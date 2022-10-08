@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
-
+import './style.css'
 import Auth from '../utils/auth';
 
 //import signup mutation
@@ -79,7 +79,7 @@ const Signup = () => {
               />
               <input
                 className="form-input"
-                placeholder="Your email"
+                placeholder="Email"
                 name="email"
                 type="email"
                 id="email"
@@ -88,7 +88,7 @@ const Signup = () => {
               />
               <input
                 className="form-input"
-                placeholder="******"
+                placeholder="Password"
                 name="password"
                 type="password"
                 id="password"

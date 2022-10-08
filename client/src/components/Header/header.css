@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Permanent+Marker&family=Playfair+Display:ital@0;1&display=swap');
 /* 
 .hero {
     height: 100vh;
@@ -20,4 +20,22 @@
     height: 100%;
     background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(../../assets/hero.jpg);
     background-size: cover;
+   
+}
+
+h1{
+    font-family: 'Permanent Marker', sans-serif;
+    margin: auto;
+    padding: 1%;
+    
+}
+
+.nav-link{
+    font-family:'Permanent Marker', sans-serif; 
+    margin: auto;
+
+}
+.flex-column{
+    font-size: 20px;
+   
 }
