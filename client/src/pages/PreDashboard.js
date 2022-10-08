@@ -25,8 +25,9 @@ const PreDashboard = () => {
     if (leagueId === null) {
         return (
             <Container>
-                <Row>
-                    <div className='text-white'>YOU NEED TO CREATE OR JOIN A LEAGUE!</div>
+                <div className='text-white'>You aren't part of a league.</div>
+                <div className='text-white'>Please create or join a league below.</div>
+                <Row className='mt-3'>
                     <LeagueForm />
                 </Row>
                 <Row>
@@ -39,6 +40,7 @@ const PreDashboard = () => {
 
     }
 
+    //passes user data to Dashboard as props
     return (
         <Dashboard leagueId={leagueId._id} userId={userId} username={username} />
     )
