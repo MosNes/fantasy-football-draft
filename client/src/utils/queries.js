@@ -23,7 +23,9 @@ export const GET_USER = gql`
         firstName
         lastName
         email
-        league_id
+        league_id {
+            _id
+        }
         teams {
             _id
             name
@@ -44,8 +46,11 @@ export const ME = gql`
             email
             firstName
             lastName
-            league_id
+            league_id {
+                _id
+            }
             teams {
+                _id
                 name
                 players {
                     _id
@@ -80,7 +85,9 @@ export const GET_TEAM = gql`
     query getTeam($_id: ID!) {
         getTeam( _id: $_id ) {
             name
-            league_id
+            league_id {
+                _id
+            }
             owner
             playerCount
             players {
@@ -114,6 +121,9 @@ query getLeague($id: ID!) {
       active_user {
         _id
         username
+        email
+        firstName
+        lastName
       }
       users {
         _id
@@ -125,13 +135,22 @@ query getLeague($id: ID!) {
           name
           _id
           owner
-          players {
+        }
+      }
+      teams {
+        _id
+        name
+        owner
+        playerCount
+        league_id {
             _id
-            name
-            position
-            number
-            projected_points
-          }
+        }
+        players {
+          _id
+          name
+          position
+          number
+          projected_points
         }
       }
       player_pool {

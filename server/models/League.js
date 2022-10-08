@@ -29,7 +29,13 @@ const leagueSchema = new Schema({
         type: String,
         //generates random code using uuidv4
         default: uuidv4
-    }
+    },
+    teams: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Team'
+        }
+    ] 
 });
 
 const League = mongoose.model('League', leagueSchema);

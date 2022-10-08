@@ -75,6 +75,8 @@ const resolvers = {
                     .populate('player_pool')
                     .populate('users')
                     .populate('active_user')
+                    .populate('teams')
+                    .populate('teams.players')
                 )
             
         },
@@ -130,6 +132,9 @@ const resolvers = {
 
         //creates new team
         createTeam: async (parent, args, context) => {
+
+            console.log('create team args: ', args);
+
             if (context.user) {
                 //creates new team record
                 const team = await Team.create({
@@ -143,6 +148,15 @@ const resolvers = {
                     { $push: { teams: team._id } },
                     { new: true }
                 );
+
+                //adds the team to the League's teams array
+                const league = await League.findByIdAndUpdate(
+                    { _id: args.league_id },
+                    { $push: { teams: team._id }},
+                    { new: true }
+                );
+
+                console.log("league: ", league);
 
                 return team;
             }
@@ -161,7 +175,7 @@ const resolvers = {
 
                 //updates User record with league ID
                 await User.findByIdAndUpdate(
-                    user.context._id,
+                    context.user._id,
                     { league_id: league._id },
                     {new: true}
                 );
@@ -211,7 +225,7 @@ const resolvers = {
 
                 //updates User record with league ID
                 await User.findByIdAndUpdate(
-                    user.context._id,
+                    context.user._id,
                     { league_id: league._id },
                     {new: true}
                 );

@@ -15,10 +15,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 //import components
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Login from './pages/Login'
-import Signup from './pages/Signup'
-// import Home from './pages/Home'
-import Dashboard from './pages/Dashboard'
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import Home from './pages/Home';
+import Dashboard from './pages/Dashboard';
 
 //create connection to backend apollo server
 const httpLink = createHttpLink({
@@ -44,15 +44,18 @@ const client = new ApolloClient({
 });
 
 function App() {
+
+
   return (
     <ApolloProvider client={client}>
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
           <Header />
           <Routes>
-          <Route path="login/" element={<Login />} />
-          <Route path="signup/" element={<Signup />} />
-          <Route path="dashboard/:leagueId" element={<Dashboard />} />
+          <Route path='/' element={<Home />} />
+          <Route path="/login/" element={<Login />} />
+          <Route path="/signup/" element={<Signup />} />
+          <Route path="/dashboard/" element={<Dashboard />} />
           </Routes>
           <Footer />
         </div>
@@ -60,4 +63,5 @@ function App() {
     </ApolloProvider>
   );
 }
+
 export default App;
