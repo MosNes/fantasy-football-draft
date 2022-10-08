@@ -1,7 +1,7 @@
 //Header component
 import React from 'react';
 import Auth from '../../utils/auth';
-import { Navbar, NavDropdown, Form, FormControl, Button, Nav } from 'react-bootstrap'
+import { Navbar, Nav } from 'react-bootstrap'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import './header.css';
@@ -17,10 +17,10 @@ const Header = () => {
     }
     return (
         <nav>
-            <div>
+            <div className='hero'>
 
                 <Navbar bg="dark" variant={"dark"} expand="lg">
-                    <Navbar.Brand href="#">Fantasy Football</Navbar.Brand>
+                    <Navbar.Brand href="#">Football Fantasy</Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav
