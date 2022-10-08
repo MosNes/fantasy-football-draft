@@ -10,6 +10,7 @@ import DataTable from '../components/DataTable';
 import TeamInfo from '../components/TeamInfo';
 import LeagueInfo from '../components/LeagueInfo';
 import LeagueForm from '../components/LeagueForm';
+import TeamForm from '../components/TeamForm';
 
 import { useQuery, useMutation } from '@apollo/client';
 
@@ -57,8 +58,8 @@ const Dashboard = () => {
 	}
 
 	return (
-		<main className='p-3'>
-      //testing LeagueForm component
+		<main className='p-3 bg-dark text-white'>
+      <Row><TeamForm></TeamForm></Row>
       <Row><LeagueForm/></Row>
 			<Row className='border-bottom'>
 				<Container className='p-3'><LeagueInfo leagueData={leagueData.getLeague} userId={userId} /></Container>

@@ -1,7 +1,7 @@
 //Header component
 import React from 'react';
 import Auth from '../../utils/auth';
-import { Navbar, Nav } from 'react-bootstrap'
+import { Navbar, Nav} from 'react-bootstrap'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import './header.css';
@@ -13,12 +13,15 @@ const Header = () => {
         Auth.logout();
     }
     return (
-        <Navbar bg="dark" variant={"dark"} expand="lg">
-            <Navbar.Brand className="text-body" href="/">Football Fantasy</Navbar.Brand>
-            <Navbar.Toggle aria-controls="navbarScroll" />
-            <Navbar.Collapse id="navbarScroll">
+        <section className='hero'>
+        <div>
+                <h1>Football Fantasy</h1>
+        </div>
+        <Navbar bg="dark" variant={"dark"} expand="lg" defaultActiveKey="/" className="px-3">
+            
+                <Navbar.Collapse className='justify-content-end'>
                 <Nav
-                    className="mr-auto my-2 my-lg-0 justify-content-end"
+                    className="my-2 my-lg-0"
                     style={{ maxHeight: '100px' }}
                     navbarScroll
                 >
@@ -36,8 +39,10 @@ const Header = () => {
                     )}
 
                 </Nav>
-            </Navbar.Collapse>
+                </Navbar.Collapse>
+
         </Navbar>
+        </section>
     )
 };
 

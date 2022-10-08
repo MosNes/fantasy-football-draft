@@ -12,7 +12,7 @@ import './footer.css'
 
 const Footer = () => {
   return (
-    <footer className="fixed-bottom d-flex justify-content-end justify-content-end">
+    <footer className="fixed-bottom d-flex justify-content-end justify-content-end bg-dark px-3">
       <div className="footer-container">
         <a className="email" href="mailto:yaysportsdraft@gmail.com">Email Us</a>
       </div>
@@ -22,19 +22,19 @@ const Footer = () => {
         <a href="www.twitter/yaysportsdraft"
 
           className="twitter">
-          <FaTwitter size="30px" color='black'/>
+          <FaTwitter size="30px" color='white'/>
         </a>
         <a href="https://github.com/MosNes/fantasy-football-draft.git"
           className="github">
-          <FaGithub size="30px" color='black'/>
+          <FaGithub size="30px" color='white'/>
         </a>
         <a href="https://www.instagram.com/yaysportsdraft/"
           className="instagram">
-          <FaInstagram size="30px" color='black' />
+          <FaInstagram size="30px" color='white' />
         </a>
       </div>
 
-      <div className="mb-2">
+      <div className="mt-2">
         {['up'].map((direction) => (
           <DropdownButton
             as={ButtonGroup}

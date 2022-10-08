@@ -39,7 +39,7 @@ const LeagueInfo = ({ leagueData, userId }) => {
 
 	return (
 		<div>
-			<h3>{leagueData.name}</h3>
+			<h2 className='display-3'>{leagueData.name}</h2>
 			<h5 className="">Join Code: {leagueData.join_code}</h5>
 			{!leagueData.active_user ? (
 				<Alert variant="secondary" className="text-center mt-4">

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { CREATE_TEAM } from '../utils/mutations';
+import { CREATE_TEAM } from '../../utils/mutations';
 
-import Auth from '../utils/auth';
+import Auth from '../../utils/auth';
 
 //import signup mutation
 
@@ -43,8 +43,8 @@ const TeamForm = () => {
         <main className='container justify-content-center'>
         <div className="flex-row justify-center mb-4">
           <div className="col-12 col-md-6">
-            <div className="card">
-              <h4 className="card-header">Sign Up</h4>
+            <div className="card bg-secondary">
+              <h4 className="card-header">Create Team</h4>
               <div className="card-body">
                 <form onSubmit={handleFormSubmit}>
                   <input
@@ -65,7 +65,7 @@ const TeamForm = () => {
                     value={formState.league_Id}
                     onChange={handleChange}
                   />
-                  <button className="btn d-block w-100" type="submit">
+                  <button className="btn btn-success" type="submit">
                     Submit
                   </button>
                 </form>

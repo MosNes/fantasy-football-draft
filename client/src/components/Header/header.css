@@ -9,7 +9,7 @@
     
 } */
 
-.hero::before {
+.background{
     content: "";
     display: block;
     position: absolute;
@@ -26,12 +26,13 @@
 h1{
     font-family: 'Permanent Marker', sans-serif;
     margin: auto;
+    color: white;
     padding: 1%;
     
 }
 
 .nav-link{
-    font-family:'Permanent Marker', sans-serif; 
+    font-family:'Permanent Marker', sans-serif;
     margin: auto;
 
 }

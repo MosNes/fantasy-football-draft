@@ -10,21 +10,21 @@ const TeamInfo = ({ teams }) => {
             {/* returns a card for each team in the teams array */}
             {teams.map((team) => {
                 return (
-                    <Card key={team._id} className="mb-3">
+                    <Card key={team._id} className="mb-3" bg='secondary' text='white'>
                         <Card.Body>
-                            <Card.Title>
+                            <Card.Title className='display-6'>
                                 {team.name}
                             </Card.Title>
-                            <Card.Subtitle>
+                            <Card.Subtitle className='mt-1'>
                                 Owned by {team.owner}
                             </Card.Subtitle>
-                            <Card.Subtitle>
+                            <Card.Subtitle  className='mt-1'>
                                 Players {team.playerCount} / 15
                             </Card.Subtitle>
-                            <ListGroup variant="flush">
+                            <ListGroup className='mt-3'>
                                 {team.players.map((player) => {
                                     return (
-                                        <ListGroup.Item key={player._id}>
+                                        <ListGroup.Item key={player._id} variant='dark'>
                                             {player.name} - {player.position}
                                         </ListGroup.Item>
                                     )

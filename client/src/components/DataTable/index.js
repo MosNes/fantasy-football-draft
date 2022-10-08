@@ -31,7 +31,7 @@ const DataTable = ({ playerData, teams, username, activeUserId, userId }) => {
     };
 
     return (
-        <Table hover>
+        <Table hover variant="dark">
             <thead>
                 <tr>
                     <th>

@@ -40,7 +40,7 @@ import { CREATE_LEAGUE } from '../../utils/mutations';
     return (
         <main className="flex-row justify-center mb-4">
           <div className="col-12 col-md-6">
-            <div className="card">
+            <div className="card bg-secondary">
               <h4 className="card-header">Create League</h4>
 
               <div className="card-body">
@@ -55,7 +55,7 @@ import { CREATE_LEAGUE } from '../../utils/mutations';
 
                     onChange={handleChange}
                   />
-                  <button className="btn d-block w-100" type="submit">
+                  <button className="btn btn-success" type="submit">
                     Submit
                   </button>
                 </form>
