@@ -62,7 +62,7 @@ const Signup = () => {
                 <input
                 className="form-input"
                 placeholder="Last name"
-                name="lasttName"
+                name="lastName"
                 type="lastName"
                 id="lastName"
                 value={formState.lastName}

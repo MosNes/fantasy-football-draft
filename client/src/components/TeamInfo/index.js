@@ -1,7 +1,5 @@
 import React from 'react';
 import { Card, ListGroup } from 'react-bootstrap';
-import { useQuery } from '@apollo/client';
-import { GET_TEAM } from '../../utils/queries';
 
 const TeamInfo = ({ teams }) => {
 
