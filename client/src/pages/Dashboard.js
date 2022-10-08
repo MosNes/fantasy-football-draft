@@ -1,6 +1,5 @@
 //User dashboard page
 import React, { useState } from 'react';
-import { useParams, Navigate } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 
 import Auth from '../utils/auth';
@@ -12,30 +11,25 @@ import LeagueInfo from '../components/LeagueInfo';
 import LeagueForm from '../components/LeagueForm';
 import TeamForm from '../components/TeamForm';
 
-import { useQuery, useMutation } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 
 //import any queries to populate Dashboard with user data
-import { GET_LEAGUE, ME, GET_PLAYERS } from '../utils/queries';
+import { GET_LEAGUE } from '../utils/queries';
 
-//import any mutations to manipulate user data
-import {
-	ADD_PLAYER,
-	START_DRAFT,
-	SET_ACTIVE_USER,
-	END_DRAFT,
-} from '../utils/mutations';
 
-const Dashboard = () => {
+const Dashboard = ({ leagueId, username, userId }) => {
 
 	//https://stackoverflow.com/questions/49317582/how-to-chain-two-graphql-queries-in-sequence-using-apollo-client
 	// to chain two useQuery statements together, you have to use the skip property
-
+	
 	//gets the league_id returned from the user via the ME query
-	const { data: { me: { league_id: { _id } = {}, _id: userId, username: username } = {} } = {}, loading } = useQuery(ME);
+	// const { data: { me: { league_id: { _id } = {}, _id: userId, username: username } = {} } = {}, loading } = useQuery(ME);
+
 	//sets it as the variables object for the GET_LEAGUE query
-	const variables = { id: _id };
+	const variables = { id: leagueId };
 	//sets the skip property to skip if _id is undefined
-	const skip = _id === undefined;
+
+	const skip = leagueId === undefined;
 	//gets the league data via the GET_LEAGUE query, but waits til the ME query fully resolves
 	const { data: leagueData } = useQuery(GET_LEAGUE, { variables, skip });
 
@@ -57,10 +51,10 @@ const Dashboard = () => {
 		activeUserId = leagueData.getLeague.active_user._id;
 	}
 
+
+
 	return (
 		<main className='p-3 bg-dark text-white'>
-      <Row><TeamForm></TeamForm></Row>
-      <Row><LeagueForm/></Row>
 			<Row className='border-bottom'>
 				<Container className='p-3'><LeagueInfo leagueData={leagueData.getLeague} userId={userId} /></Container>
 			</Row>

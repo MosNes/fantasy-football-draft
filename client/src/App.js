@@ -19,7 +19,7 @@ import Footer from './components/Footer';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Home from './pages/Home';
-import Dashboard from './pages/Dashboard';
+import PreDashboard from './pages/PreDashboard';
 
 
 //create connection to backend apollo server
@@ -57,7 +57,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path="/login/" element={<Login />} />
           <Route path="/signup/" element={<Signup />} />
-          <Route path="/dashboard/" element={<Dashboard />} />
+          <Route path="/dashboard/" element={<PreDashboard />} />
           </Routes>
           <Footer />
         </div>

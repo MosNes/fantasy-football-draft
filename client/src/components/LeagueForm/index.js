@@ -3,9 +3,9 @@ import { useMutation } from '@apollo/client';
 import { CREATE_LEAGUE } from '../../utils/mutations';
 // import Auth from '../utils/auth';
 
-    const LeagueForm = (props) => {
+    const LeagueForm = ( {userId} ) => {
         //add state for login form
-        const [formState, setFormState] = useState('');
+        const [formState, setFormState] = useState({name: ''});
         const [createLeague, { error }] = useMutation(CREATE_LEAGUE);
       
         //add change handler for login form
@@ -22,33 +22,37 @@ import { CREATE_LEAGUE } from '../../utils/mutations';
     //add submit handler for login form
         const handleFormSubmit = async (event) => {
           event.preventDefault();
+
+          console.log('Form State', formState)
       
-          // try {
-          //   const { data } = await login({
-          //     variables: { ...formState },
-          //   });
+          try {
+            const { data } = await createLeague({
+              variables: { ...formState },
+            });
       
-          //   Auth.login(data.login.token);
-          // } catch (e) {
-          //   console.error(e);
-          // }
+            console.log(data);
+
+          } catch (e) {
+            console.error(e);
+          }
       
           // clear form values
           setFormState('');
+          document.location.reload();
         };
       
     return (
         <main className="flex-row justify-center mb-4">
           <div className="col-12 col-md-6">
-            <div className="card bg-secondary">
+            <div className="card bg-secondary text-white">
               <h4 className="card-header">Create League</h4>
 
               <div className="card-body">
-                <form onSubmit={handleFormSubmit}>
+                <form onSubmit={handleFormSubmit} className='d-grid'>
                   <input
                     className="form-input"
                     placeholder="League name"
-                    name="leagueName"
+                    name="name"
                     type="name"
                     id="name"
                     value={formState.name}

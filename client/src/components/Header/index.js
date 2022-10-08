@@ -8,6 +8,7 @@ import './header.css';
 
 
 const Header = () => {
+
     const logout = event => {
         event.preventDefault();
         Auth.logout();
@@ -17,7 +18,7 @@ const Header = () => {
         <div>
                 <h1>Football Fantasy</h1>
         </div>
-        <Navbar bg="dark" variant={"dark"} expand="lg" defaultActiveKey="/" className="px-3">
+        <Navbar bg="dark" variant={"dark"} expand="lg" className="px-3">
             
                 <Navbar.Collapse className='justify-content-end'>
                 <Nav
@@ -28,7 +29,7 @@ const Header = () => {
                     {Auth.loggedIn() ? (
                         <>
                             <Nav.Link as={Link} to="/">Home</Nav.Link>
-                            <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
+                            <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>                            
                             <Nav.Link as={Link} onClick={logout}>Logout</Nav.Link>
                         </>
                     ) : (

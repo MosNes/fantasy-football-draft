@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { JOIN_LEAGUE} from '../utils/mutations';
-
-import Auth from '../utils/auth';
+import { JOIN_LEAGUE} from '../../utils/mutations';
 
 //import signup mutation
 
@@ -32,31 +30,35 @@ const JoinLeague = () => {
           const { data } = await joinLeague({
             variables: { ...formState },
           });
+
+          console.log(data);
+          document.location.reload();
     
-          Auth.login(data.createTeam.token);
         } catch (e) {
           console.error(e);
         }
+
       };
+
 
     return (
         <main className='container justify-content-center'>
         <div className="flex-row justify-center mb-4">
           <div className="col-12 col-md-6">
-            <div className="card">
-              <h4 className="card-header">Sign Up</h4>
+            <div className="card bg-secondary text-white">
+              <h4 className="card-header">Join League</h4>
               <div className="card-body">
-                <form onSubmit={handleFormSubmit}>
+                <form onSubmit={handleFormSubmit} className='d-grid'>
                   <input
                     className="form-input"
                     placeholder="Join Code"
-                    name="joinCode"
+                    name="join_code"
                     type="joinCode"
                     id="joinCode"
-                    value={formState.joinCode}
+                    value={formState.join_code}
                     onChange={handleChange}
                   />
-                  <button className="btn d-block w-100" type="submit">
+                  <button className="btn d-block w-100 btn-success" type="submit">
                     Submit
                   </button>
                 </form>
