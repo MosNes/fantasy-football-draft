@@ -45,12 +45,12 @@ import './style.css'
         };
       
     return (
-        <main className="flex-row justify-center mb-4">
+        <main className="d-flex justify-content-center mb-4">
           <div className="col-12 col-md-6">
-            <div className="card">
-              <h4 className="card-header">Login</h4>
+            <div className="card bg-secondary">
+              <h4 className="card-header text-white">Login</h4>
               <div className="card-body">
-                <form onSubmit={handleFormSubmit}>
+                <form onSubmit={handleFormSubmit} className='d-grid'>
                   <input
                     className="form-input"
                     placeholder="Your email"
@@ -69,9 +69,11 @@ import './style.css'
                     value={formState.password}
                     onChange={handleChange}
                   />
-                  <button className="btn d-block w-100" type="submit">
+                  <div className='d-grid'>
+                  <button className="btn btn-success" type="submit">
                     Submit
                   </button>
+                  </div>
                 </form>
     
                 {error && <div>Login failed</div>}
