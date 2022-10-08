@@ -17,8 +17,10 @@ const Footer = () => {
         <a className="email" href="mailto:yaysportsdraft@gmail.com">Email Us</a>
       </div>
       <div className="footer-container">
+
         {/* <p className='follow'> Follow Us </p> */}
         <a href="www.twitter/yaysportsdraft"
+
           className="twitter">
           <FaTwitter size="30px" color='black'/>
         </a>

@@ -1,59 +1,58 @@
-//Signup page
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { CREATE_LEAGUE } from '../utils/mutations';
+import { CREATE_LEAGUE } from '../../utils/mutations';
+// import Auth from '../utils/auth';
 
-import Auth from '../utils/auth';
-
-//import signup mutation
-
-const LeagueForm = () => {
-    //set up state for league form
-    const [formState, setFormState] = useState({
-        name: ''
-      });
-      const [createLeague, { error }] = useMutation(CREATE_LEAGUE);
-    
-      //add change handlers for signup form state
-      const handleChange = (event) => {
-        const { name, value } = event.target;
-    
-        setFormState({
-          ...formState,
-          [name]: value,
-        });
-      };
-    
-      //add submit handler for signup form
-      const handleFormSubmit = async (event) => {
-        event.preventDefault();
-    
-        try {
-          const { data } = await createLeague({
-            variables: { ...formState },
+    const LeagueForm = (props) => {
+        //add state for login form
+        const [formState, setFormState] = useState('');
+        const [createLeague, { error }] = useMutation(CREATE_LEAGUE);
+      
+        //add change handler for login form
+        const handleChange = (event) => {
+          const { name, value } = event.target;
+      
+          setFormState({
+            ...formState,
+            [name]: value,
           });
-    
-          Auth.login(data.createLeague.token);
-        } catch (e) {
-          console.error(e);
-        }
-      };
-
+        };
+      
+       
+    //add submit handler for login form
+        const handleFormSubmit = async (event) => {
+          event.preventDefault();
+      
+          // try {
+          //   const { data } = await login({
+          //     variables: { ...formState },
+          //   });
+      
+          //   Auth.login(data.login.token);
+          // } catch (e) {
+          //   console.error(e);
+          // }
+      
+          // clear form values
+          setFormState('');
+        };
+      
     return (
-        <main className='container justify-content-center'>
-        <div className="flex-row justify-center mb-4">
+        <main className="flex-row justify-center mb-4">
           <div className="col-12 col-md-6">
             <div className="card">
-              <h4 className="card-header">Sign Up</h4>
+              <h4 className="card-header">Create League</h4>
+
               <div className="card-body">
                 <form onSubmit={handleFormSubmit}>
                   <input
                     className="form-input"
-                    placeholder="League Name"
+                    placeholder="League name"
                     name="leagueName"
-                    type="leagueName"
-                    id="leagueName"
-                    value={formState.username}
+                    type="name"
+                    id="name"
+                    value={formState.name}
+
                     onChange={handleChange}
                   />
                   <button className="btn d-block w-100" type="submit">
@@ -65,9 +64,9 @@ const LeagueForm = () => {
               </div>
             </div>
           </div>
-          </div>
         </main>
-      );
-    };
-    
-    export default Signup;
+    )
+
+};
+
+export default LeagueForm;

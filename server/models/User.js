@@ -35,7 +35,13 @@ const userSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: 'Team'
     }
-  ]
+  ],
+  league_id: {
+    type: Schema.Types.ObjectId,
+    required: false,
+    ref: 'League',
+    default: null
+  }
 });
 
 // set up pre-save middleware to create password
