@@ -71,7 +71,7 @@ const Dashboard = ({ leagueId, username, userId }) => {
 				<Container className='col-md-4 p-3'><TeamInfo teams={leagueData.getLeague.teams} username={username}/></Container>
 				<Container className='col-md-8 p-3'>
 					<h2 className='mb-4'>Available Players</h2>
-					<DataTable activeUserId={ activeUserId } userId={userId} username={username} playerData={leagueData.getLeague.player_pool} teams={leagueData.getLeague.teams} />
+					<DataTable leagueId={ leagueId } activeUserId={ activeUserId } userId={userId} username={username} playerData={leagueData.getLeague.player_pool} teams={leagueData.getLeague.teams} />
 				</Container>
 			</Row>
 		</main>

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Table, Button } from 'react-bootstrap';
 
-import { ADD_PLAYER } from '../../utils/mutations';
-import { useMutation, useQuery } from '@apollo/client';
-import { ME } from '../../utils/queries';
+import { ADD_PLAYER, SET_ACTIVE_USER } from '../../utils/mutations';
+import { useMutation } from '@apollo/client';
 
-const DataTable = ({ playerData, teams, username, activeUserId, userId }) => {
+
+const DataTable = ({ leagueId, playerData, teams, username, activeUserId, userId }) => {
 
     console.log("teams :", teams);
 
@@ -16,6 +16,8 @@ const DataTable = ({ playerData, teams, username, activeUserId, userId }) => {
 
     const [ addPlayer, { error }] = useMutation(ADD_PLAYER);
 
+    const [ setActiveUser, { activeUserError }] = useMutation(SET_ACTIVE_USER);
+
     const handleAddPlayer = async (event, playerId, teamId) => {
         console.log(playerId)
         event.preventDefault();
@@ -24,6 +26,9 @@ const DataTable = ({ playerData, teams, username, activeUserId, userId }) => {
             await addPlayer({
                 variables: { playerId, teamId }
             });
+            await setActiveUser({
+                variables: {league_id: leagueId}
+            })
             document.location.reload();
         } catch (e) {
             console.error(e);
