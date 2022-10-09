@@ -1,14 +1,14 @@
 import React from 'react';
 import { Card, ListGroup } from 'react-bootstrap';
 
-const TeamInfo = ({ teams }) => {
+const TeamInfo = ({ teams, username }) => {
 
     return (
         <div>
             {/* returns a card for each team in the teams array */}
             {teams.map((team) => {
                 return (
-                    <Card key={team._id} className="mb-3" bg='secondary' text='white'>
+                    <Card key={team._id} className="mb-3" bg={username === team.owner ? 'success' : 'secondary'} text='white'>
                         <Card.Body>
                             <Card.Title className='display-6'>
                                 {team.name}
