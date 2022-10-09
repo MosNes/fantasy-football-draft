@@ -50,13 +50,20 @@ const Dashboard = ({ leagueId, username, userId }) => {
 		activeUserId = leagueData.getLeague.active_user._id;
 	}
 
-
+	//checks to see if the current user has a team in this league
+	const teamCheck = leagueData.getLeague.teams.filter( (team) => team.owner === username)
 
 	return (
 		<main className='p-3 bg-dark text-white'>
+			{/* if current user does not have a team in this league, return create team form */}
+			{!teamCheck[0] ? (
 			<Row>
 				<TeamForm leagueId={leagueData.getLeague._id}/>
 			</Row>
+			) : ( 
+			<></> 
+			)}
+			
 			<Row className='border-bottom'>
 				<Container className='p-3'><LeagueInfo leagueData={leagueData.getLeague} userId={userId} /></Container>
 			</Row>
