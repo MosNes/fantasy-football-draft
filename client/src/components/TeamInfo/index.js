@@ -8,6 +8,7 @@ const TeamInfo = ({ teams, username }) => {
             {/* returns a card for each team in the teams array */}
             {teams.map((team) => {
                 return (
+                    // if the team belongs to the current user, highlight card in green
                     <Card key={team._id} className="mb-3" bg={username === team.owner ? 'success' : 'secondary'} text='white'>
                         <Card.Body>
                             <Card.Title className='display-6'>
