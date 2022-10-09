@@ -32,10 +32,6 @@ const Dashboard = ({ leagueId, username, userId }) => {
 	//gets the league data via the GET_LEAGUE query, but waits til the ME query fully resolves
 	const { data: leagueData } = useQuery(GET_LEAGUE, { variables, skip });
 
-	console.log("League Data: ", leagueData);
-	console.log("User ID: ", userId);
-	console.log("Username: ", username);
-
 	//if leagueData is undefined, display LOADING
 	if (!leagueData) {
 		return (

@@ -7,8 +7,6 @@ import { useMutation } from '@apollo/client';
 
 const DataTable = ({ leagueId, playerData, teams, username, activeUserId, userId }) => {
 
-    console.log("teams :", teams);
-
     //finds the logged in user's team by filtering the array of teams in the league and matching the one where the owner = user's username
     const userTeam = teams.filter( team => team.owner === username)[0];
 
@@ -19,7 +17,6 @@ const DataTable = ({ leagueId, playerData, teams, username, activeUserId, userId
     const [ setActiveUser, { activeUserError }] = useMutation(SET_ACTIVE_USER);
 
     const handleAddPlayer = async (event, playerId, teamId) => {
-        console.log(playerId)
         event.preventDefault();
 
         try {
