@@ -1,6 +1,6 @@
-# Welcome to Fantasy Football
+# Welcome to Football Fantasy
 
-Fantasy Football is a web application that allows you to fantasize amongst friends with your own football league. Pick your favorite players, draft them to your team and defeat your friends on a weekly bases.
+Football Fantasy is a web application that allows you to create your own fantasy football league with friends. Pick your favorite players, draft them to your team and defeat your friends on a weekly bases.
 
 Try it [here](https://fantasy-football-draft-app.herokuapp.com/)
 
@@ -47,8 +47,7 @@ Try it [here](https://fantasy-football-draft-app.herokuapp.com/)
 User Story:
 AS A football fanatic I WANT to play a game amongst friends, associates, or even meet new friends while competing with their knowledge of the game SO THAT I enjoy NFL sunday’s even when my team sucks.
 
-GIVEN a team with 15 spots, I will draft players by using the search input in my dashboard. WHEN I am presented with various players of different positions, I can choose and  add them to my team. WHEN my team roster is full I can drop players and pick up new  players. 
-
+GIVEN a team with 15 spots, I will draft players by using the search input in my dashboard. WHEN I am presented with various players of different positions, I can choose and  add them to my team. 
 
 ## 🛠️ Installation Steps
 The project was uploaded to GitHub at the following [repository] (https://github.com/MosNes/fantasy-football-draft.git)
