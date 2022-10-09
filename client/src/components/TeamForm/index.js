@@ -2,15 +2,13 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { CREATE_TEAM } from '../../utils/mutations';
 
-import Auth from '../../utils/auth';
-
 //import signup mutation
 
-const TeamForm = () => {
+const TeamForm = ({leagueId}) => {
     //set up state for league form
     const [formState, setFormState] = useState({
         name: '',
-        league_Id: ''
+        leagueId: leagueId
       });
       const [createTeam, { error }] = useMutation(CREATE_TEAM);
     
@@ -32,8 +30,10 @@ const TeamForm = () => {
           const { data } = await createTeam({
             variables: { ...formState },
           });
+
+          console.log(data);
+          document.location.reload();
     
-          Auth.login(data.createTeam.token);
         } catch (e) {
           console.error(e);
         }
@@ -46,23 +46,14 @@ const TeamForm = () => {
             <div className="card bg-secondary">
               <h4 className="card-header">Create Team</h4>
               <div className="card-body">
-                <form onSubmit={handleFormSubmit}>
+                <form onSubmit={handleFormSubmit} className='d-grid'>
                   <input
                     className="form-input"
                     placeholder="Team Name"
-                    name="teamName"
-                    type="teamName"
-                    id="teamName"
+                    name="name"
+                    type="name"
+                    id="name"
                     value={formState.name}
-                    onChange={handleChange}
-                  />
-                   <input
-                    className="form-input"
-                    placeholder="League ID"
-                    name="leagueId"
-                    type="leagueId"
-                    id="leagueId"
-                    value={formState.league_Id}
                     onChange={handleChange}
                   />
                   <button className="btn btn-success" type="submit">
